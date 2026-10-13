@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="navigatiebalk.css">
+</head>
+
+<body>
+    <header>
+        <nav class="menu" aria-label="Hoofdnavigatie">
+            <a href="recepten.html">Recepten</a>
+            <a href="meer.html">
+                Meer <span class="arrow" aria-hidden="true"></span>
+            </a>
+        </nav>
+
+        <form class="search" id="searchForm" role="search">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+
+            <input type="search" id="searchInput" placeholder="Waar ben je naar op zoek?" aria-label="Zoek recepten">
+
+            <button class="filter" id="filterButton" type="button" aria-label="Filter recepten">
+                ☷ Filteren
+                <span class="arrow" aria-hidden="true"></span>
+            </button>
+        </form>
+
+        <div class="account">
+            <a href="inloggen.html">Inloggen</a>
+            <a href="registreren.html">Account aanmaken</a>
+        </div>
+    </header>
+
+    <div class="message" id="message" aria-live="polite"></div>
+
+    <script src="navigatiebalk.js"></script>
+</body>
+
+</html>

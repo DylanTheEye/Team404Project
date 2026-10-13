@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F2ECE2;
+    color: #351700;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 3%;
+    gap: 35px;
+    background-color: #FFF9F3;
+    box-shadow: 0 2px 8px rgba(53, 23, 0, 0.04);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.menu a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #351700;
+    font-size: 16px;
+    font-weight: normal;
+    padding: 8px 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.menu a:hover {
+    color: #819FB3;
+    border-bottom-color: #9CB4C5;
+}
+
+.arrow {
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+    margin-top: -4px;
+    transition: transform 0.25s ease;
+    flex-shrink: 0;
+}
+
+.menu a:hover .arrow {
+    transform: rotate(225deg);
+    margin-top: 4px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    background-color: #CDE7EA;
+    border: 1px solid transparent;
+    border-radius: 40px;
+    height: 48px;
+    flex: 1 1 680px;
+    min-width: 220px;
+    max-width: 760px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(53, 23, 0, 0.03);
+    transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.search:hover {
+    box-shadow: 0 4px 14px rgba(53, 23, 0, 0.08);
+}
+
+.search:focus-within {
+    border-color: #9CB4C5;
+    box-shadow: 0 0 0 3px rgba(156, 180, 197, 0.25);
+}
+
+.search-icon {
+    font-size: 24px;
+    padding-left: 18px;
+    line-height: 1;
+    color: #351700;
+}
+
+.search input {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 12px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    color: #351700;
+}
+
+.search input::placeholder {
+    color: #351700;
+    opacity: 0.8;
+}
+
+.filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 100%;
+    padding: 0 20px;
+    border: none;
+    border-radius: 40px;
+    background-color: #9CB4C5;
+    color: #351700;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.filter:hover {
+    background-color: #819FB3;
+}
+
+.filter:active {
+    transform: scale(0.98);
+}
+
+.filter .arrow {
+    border-color: #351700;
+    width: 7px;
+    height: 7px;
+}
+
+.account {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.account a {
+    display: inline-block;
+    padding: 8px 0;
+    text-decoration: none;
+    color: #351700;
+    font-size: 16px;
+    font-weight: normal;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.account a:hover {
+    color: #819FB3;
+    border-bottom-color: #9CB4C5;
+}
+
+.message {
+    display: none;
+    padding: 20px 3%;
+    font-size: 16px;
+    color: #351700;
+}
+
+@media (max-width: 1100px) {
+    header {
+        gap: 22px;
+    }
+
+    .menu {
+        gap: 22px;
+    }
+
+    .search {
+        flex-basis: 480px;
+    }
+
+    .account {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 850px) {
+    header {
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .search {
+        order: 3;
+        flex: 1 1 100%;
+        max-width: none;
+    }
+
+    .menu {
+        gap: 22px;
+    }
+
+    .account {
+        margin-left: auto;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 550px) {
+    header {
+        padding: 15px 4%;
+        gap: 16px;
+    }
+
+    .menu {
+        gap: 18px;
+    }
+
+    .menu a {
+        font-size: 14px;
+    }
+
+    .account {
+        gap: 12px;
+    }
+
+    .account a {
+        font-size: 14px;
+    }
+
+    .search {
+        height: 46px;
+        min-width: 0;
+    }
+
+    .search-icon {
+        padding-left: 14px;
+        font-size: 22px;
+    }
+
+    .search input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .filter {
+        padding: 0 13px;
+        gap: 7px;
+        font-size: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+}
