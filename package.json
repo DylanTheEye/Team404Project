@@ -1,7 +1,4 @@
 {
-  "dependencies": {
-    "bootstrap": "^5.3.8"
-  },
   "name": "team404project",
   "version": "1.0.0",
   "description": "",
@@ -9,7 +6,6 @@
   "directories": {
     "doc": "docs"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
