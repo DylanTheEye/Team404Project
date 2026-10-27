@@ -9,13 +9,6 @@
     <title>Toevoegpagina</title>
 </head>
 <body>
-    <!-- <div class="cntr_main grid_parent">
-        <div class="grid_child"> Navigation </div>
-        <div class="grid_child"> Basic info section </div>
-        <div class="grid_child"> Type & ingredents list </div>
-        <div class="grid_child"> Stappen section </div>
-    </div> -->
-
     <div class="formContainer">
     <form action="">
         <div class="top_section">
@@ -30,16 +23,24 @@
         </div>
 
         <div class="section2">
-            <input type="file" id="imgFile" name="imgFile">
+            <label for="imgFile" class="imgFile-btn"> <img src="../img/icons/imageUpload.svg"> </label>
+            <input type="file" id="imgFile" name="imgFile" style="display: none;">
 
-            <label for="dishName"> Gerecht Naam: </label>
-            <input type="text" name="dishName" id="dishName">
+            <div class="sect2_input">
 
-            <label for="dishDescription"> Uitleg: </label>
-            <input type="text" name="dishDescription" id="dishDescription">
+                <div>
+                                   <label for="dishName"> Gerecht Naam: </label>
+                                   <input type="text" name="dishName" id="dishName">
+                </div>
+
+
+               <label for="dishDescription"> Uitleg: </label>
+               <input type="text" name="dishDescription" id="dishDescription">
+            </div>
+
 
         </div>
-
+<!-- 
         <div class="section3">
             <h2> Soorten </h2>
             <div class="sect3_checkbox"> 
@@ -78,9 +79,9 @@
                 <textarea name="ingredientList" id="ingredientList"></textarea>
             </div>
 
-        </div>
+        </div> -->
 
-        <div class="section4">
+        <!-- <div class="section4">
             <h2> Stappen</h2>
             <label for="stepOne"> Stap 1: </label>
             <input type="text">  <input type="file" name="stepImg1" id="stepImg1" multiple> </input>
@@ -99,7 +100,7 @@
             <input type="text">  <input type="file" name="stepImg1" id="stepImg1" multiple> </input>
         </div>
 
-        <input type="image" src="../img/icons/upload.svg" alt="Submit" id="submitBtn" name="submitBtn">
+        <input type="image" src="../img/icons/upload.svg" alt="Submit" id="submitBtn" name="submitBtn"> -->
 
     </form>
     </div>
