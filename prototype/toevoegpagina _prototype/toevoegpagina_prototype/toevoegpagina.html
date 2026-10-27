@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../img/logo_lightblue.svg">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Toevoegpagina</title>
+</head>
+<body>
+    <!-- <div class="cntr_main grid_parent">
+        <div class="grid_child"> Navigation </div>
+        <div class="grid_child"> Basic info section </div>
+        <div class="grid_child"> Type & ingredents list </div>
+        <div class="grid_child"> Stappen section </div>
+    </div> -->
+
+    <div class="formContainer">
+    <form action="">
+        <div class="top_section">
+            <label for="prepTime"> Voorbereidingstijd:  </label>
+            <input type="text" id="prepTime" name="prepTime">
+
+            <label for="cookTime"> Kook Tijd: </label>
+            <input type="text" id="cookTime" name="cookTime">
+
+            <label for="servingAmount"> Porties: </label>
+            <input type="text" name="servingAmount" id="servingAmount">
+        </div>
+
+        <div class="section2">
+            <input type="file" id="imgFile" name="imgFile">
+
+            <label for="dishName"> Gerecht Naam: </label>
+            <input type="text" name="dishName" id="dishName">
+
+            <label for="dishDescription"> Uitleg: </label>
+            <input type="text" name="dishDescription" id="dishDescription">
+
+        </div>
+
+        <div class="section3">
+            <h2> Soorten </h2>
+            <div class="sect3_checkbox"> 
+
+            <input type="checkbox" name="optionMeat" id="optionMeat">
+            <label for="optionMeat"> <img src="../img/icons/meat.svg" alt=""></label>
+
+            <input type="checkbox" name="optionVeggi" id="optionVegi">
+            <label for="optionVeggi">  <img src="../img/icons/vegi.svg" alt=""></label>
+
+            <input type="checkbox" name="optionVegan" id="optionVegan">
+            <label for="optionVegan">  <img src="../img/icons/vegen.svg" alt=""></label>
+
+            <input type="checkbox" name="optionSeafood" id="optionSeafood">
+            <label for="optionSeafood">  <img src="../img/icons/seafood.svg" alt=""></label>
+
+            <input type="checkbox" name="optionDessert" id="optionDessert">
+            <label for="optionDessert">  <img src="../img/icons/dessert.svg" alt=""></label>
+
+            <input type="checkbox" name="optionPork" id="optionPork">
+            <label for="optionPork">  <img src="../img/icons/pork.svg" alt=""></label>
+
+            <input type="checkbox" name="optionGluten" id="optionGluten">
+            <label for="optionGluten">  <img src="../img/icons/glutenFree.svg" alt=""></label>
+
+            <input type="checkbox" name="optionEggless" id="optionEggless">
+            <label for="optionEggless">  <img src="../img/icons/eggFree.svg" alt=""></label>
+
+            <input type="checkbox" name="optionAntiDairy" id="optionAntiDairy">
+            <label for="optionAntiDairy">  <img src="../img/icons/dairyFree.svg" alt=""></label>
+
+            </div>
+
+            <div class="sect">
+                <label for="ingredientList"> Ingrediëntenlijst:  </label>
+                <textarea name="ingredientList" id="ingredientList"></textarea>
+            </div>
+
+        </div>
+
+        <div class="section4">
+            <h2> Stappen</h2>
+            <label for="stepOne"> Stap 1: </label>
+            <input type="text">  <input type="file" name="stepImg1" id="stepImg1" multiple> </input>
+
+            <label for="stepOne"> Stap 2: </label>
+            <input type="text">  <input type="file" name="stepImg1" id="stepImg1" multiple> </input>
+
+            <label for="stepOne"> Stap 3: </label>
+            <input type="text">  <input type="file" name="stepImg1" id="stepImg1" multiple> </input>   
+            
+            <label for="stepOne"> Stap 4: </label>
+            <input type="text">  <input type="file" name="stepImg1" id="stepImg1" multiple> </input>
+
+
+            <label for="stepOne"> Stap 5: </label>
+            <input type="text">  <input type="file" name="stepImg1" id="stepImg1" multiple> </input>
+        </div>
+
+        <input type="image" src="../img/icons/upload.svg" alt="Submit" id="submitBtn" name="submitBtn">
+
+    </form>
+    </div>
+
+
+</body>
+</html>
