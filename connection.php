@@ -14,5 +14,5 @@ $result = $stmt->fetchAll();
 // counts the rows
 $amountRow = count($result);
 
-include __DIR__ . '../php/views/toevoegview.php';
+include __DIR__ . '/php/views/toevoegview.php';
 

@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../css/recepten.css">
+    <link rel="stylesheet" href="../../css/recepten.css">
     <title>Recepten</title>
 </head>
 <body>
@@ -57,7 +57,7 @@
             </article>
 
             <article class="card" data-tag="veganistisch">
-                <div class="card_img">Afbeelding</div>
+                <div class="card_img"><img src="#" alt="Card Image"></div>
                 <div class="card_body">
                     <span class="card_tag">veganistisch</span>
                     <h3>Naam van recept</h3>
@@ -66,7 +66,7 @@
             </article>
 
             <article class="card" data-tag="zeevruchten">
-                <div class="card_img">Afbeelding</div>
+                <div class="card_img"><img src="#" alt="Card Image"></div>
                 <div class="card_body">
                     <span class="card_tag">zeevruchten</span>
                     <h3>Naam van recept</h3>
@@ -75,7 +75,7 @@
             </article>
 
             <article class="card" data-tag="varkensvlees">
-                <div class="card_img">Afbeelding</div>
+                <div class="card_img"><img src="#" alt="Card Image"></div>
                 <div class="card_body">
                     <span class="card_tag">varkensvlees</span>
                     <h3>Naam van recept</h3>
@@ -84,7 +84,7 @@
             </article>
 
             <article class="card" data-tag="dessert">
-                <div class="card_img">Afbeelding</div>
+                <div class="card_img"><img src="#" alt="Card Image"></div>
                 <div class="card_body">
                     <span class="card_tag">dessert</span>
                     <h3>Naam van recept</h3>
@@ -93,7 +93,7 @@
             </article>
 
             <article class="card" data-tag="glutenvrij">
-                <div class="card_img">Afbeelding</div>
+                <div class="card_img"><img src="#" alt="Card Image"></div>
                 <div class="card_body">
                     <span class="card_tag">glutenvrij</span>
                     <h3>Naam van recept</h3>
@@ -102,7 +102,7 @@
             </article>
 
             <article class="card" data-tag="zuivelvrij">
-                <div class="card_img">Afbeelding</div>
+                <div class="card_img"><img src="#" alt="Card Image"></div>
                 <div class="card_body">
                     <span class="card_tag">zuivelvrij</span>
                     <h3>Naam van recept</h3>
@@ -111,7 +111,7 @@
             </article>
 
             <article class="card" data-tag="ei-vrij">
-                <div class="card_img">Afbeelding</div>
+                <div class="card_img"><img src="#" alt="Card Image"></div>
                 <div class="card_body">
                     <span class="card_tag">ei-vrij</span>
                     <h3>Naam van recept</h3>
@@ -126,7 +126,7 @@
     <footer class="grid_child">
         <span class="section_label">Footer</span>
         <div class="footer_content">
-            <div class="footer_logo">Logo</div>
+<!--            <div class="footer_logo">Logo</div>-->
             <address class="footer_contact">
                 <p><strong>E-mail</strong><br>info@voorbeeld.nl</p>
                 <p><strong>Adres</strong><br>Voorbeeldstraat 12<br>1234 AB Plaatsnaam</p>
