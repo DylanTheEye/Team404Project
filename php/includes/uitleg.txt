@@ -1,0 +1,1 @@
+: pieces that get included on many pages, like a navbar, header or footer.
