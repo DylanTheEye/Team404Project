@@ -20,16 +20,16 @@
     <section class="grid_child">
         <span class="section_label">Filter</span>
         <div class="filter_buttons">
-            <button type="button" data-filter="alles">alles</button>
-            <button type="button" data-filter="vlees">vlees</button>
-            <button type="button" data-filter="groenten">groenten</button>
-            <button type="button" data-filter="veganistisch">veganistisch</button>
-            <button type="button" data-filter="zeevruchten">zeevruchten</button>
-            <button type="button" data-filter="varkensvlees">varkensvlees</button>
-            <button type="button" data-filter="dessert">dessert</button>
-            <button type="button" data-filter="glutenvrij">glutenvrij</button>
-            <button type="button" data-filter="zuivelvrij">zuivelvrij</button>
-            <button type="button" data-filter="ei-vrij">ei-vrij</button>
+            <button type="button"> alles</button>
+            <button type="button"> vlees</button>
+            <button type="button" >groenten</button>
+            <button type="button" >veganistisch</button>
+            <button type="button" >zeevruchten</button>
+            <button type="button" >varkensvlees</button>
+            <button type="button" >dessert</button>
+            <button type="button" >glutenvrij</button>
+            <button type="button" >zuivelvrij</button>
+            <button type="button" >ei-vrij</button>
         </div>
     </section>
 
@@ -37,7 +37,7 @@
     <main class="grid_child">
         <span class="section_label"> </span>
         <div class="cards">
-            
+
             <article class="card" data-tag="vlees">
                 <div class="card_img"><img src="#" alt="Card Image"></div>
                 <div class="card_body">
