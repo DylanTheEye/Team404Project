@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Short+Stack&display=swap');
+
+/* .young-serif-regular {
+  font-family: "Young Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+} 
+  
+  font-family: "Short Stack", cursive;
+  font-weight: 400;
+  font-style: normal;
+*/
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    background-color: #FFF9F3;
+    margin: 0.5em;
+}
+
+input{
+    font-family: "Short Stack", cursive;
+}
+
+/* ========================================== */
+.section3 > .sect3_checkbox > label > img{
+    height: 2.0em;
+}
+
+.section2 > label > img{
+    height: 10em;
+}
+
+.formContainer{
+    display: flex;
+}
+/* ========================================== */
+.top_section{ 
+    display: flex;
+    height: 3em;
+    margin-bottom: 1.5em;
+    border: solid 1px plum;
+    padding: 0.5em;
+    gap: 0.7em ;
+}
+
+.top_section > label{
+    font-family: "Young Serif", serif;
+}
+
+.top_section > input{
+  height: 2.5em;
+}
+
+
+/* ------------------------------------------ */
+.section2{
+    display: flex;
+    height: 15em;
+    margin-bottom: 1.5em;
+    border: solid 1px plum;
+    padding: 0.5em;
+    align-items: center;
+}
+
+.section2 > label{
+    font-family: "Young Serif", serif;
+    margin-right: 0.5em;
+}
+
+.sect2_input{
+    display: flex;
+    flex-direction: column;
+    border: solid 2px salmon;
+    width: 80%;
+    height: 90%;
+    gap: 0.5em;
+}
+
+.sect2_input > input{
+    width: 70%;
+    height: 2.5em;
+}
+
+
+
+
+.imgFile-btn{
+    display: flex;
+    background-color: #F2ECE2;
+    height: 80%;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgFile-btn > img{
+    width: 9em;
+}
+
+
+/* 
+.section3{
+    display: flex;
+    height: 20em;
+    margin-bottom: 1.5em;
+    border: solid 1px plum;
+    padding: 0.5em;
+    flex-direction: column;
+}
+
+.sect3_checkbox{
+    display: flex;
+}
+
+.section4{
+    display: flex;
+    height: 32em;
+    margin-bottom: 1.5em;
+    border: solid 1px plum;
+    padding: 0.5em;
+    flex-wrap: nowrap;
+    flex-direction: column;
+} */
