@@ -4,8 +4,8 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 $servername = "localhost";
-$username = "dbstars";
-$password = "Do_noTBre@k21";
+$username = "db_stars";
+$password = "DonoTbreaK";
 $database = "home_db";
 
 // PDO

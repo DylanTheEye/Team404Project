@@ -39,7 +39,7 @@
         <div class="cards">
 
             <article class="card" data-tag="vlees">
-                <div class="card_img"><img src="#" alt="Card Image"></div>
+                <div class="card_img"> <img src="#" alt="Card Image"></div>
                 <div class="card_body">
                     <span class="card_tag">vlees</span>
                     <h3>Naam van recept</h3>
