@@ -14,10 +14,11 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 3%;
+    /* padding: 15px 3%; */
     gap: 35px;
     background-color: #FFF9F3;
-    box-shadow: 0 2px 8px rgba(53, 23, 0, 0.04);
+    width: 100dvw;
+    /* box-shadow: 0 2px 8px rgba(53, 23, 0, 0.04); */
 }
 
 .menu {

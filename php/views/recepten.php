@@ -5,132 +5,100 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../../css/recepten.css">
+    <link rel="stylesheet" href="./css/recepten.css">
+    <link rel="stylesheet" href="./includes/navigatiebalk/navigatiebalk.css">
     <title>Recepten</title>
 </head>
 <body>
 <div class="cntr_main grid_parent">
 
-    <!-- 1. Navigatie (leeg: navbar komt hier) -->
+    <!-- Navigatie -->
     <header class="grid_child">
-        <span class="section_label">Navigatie</span>
+        <header>
+            <nav class="menu" aria-label="Hoofdnavigatie">
+                <a href="recepten.html">Recepten</a>
+<!--                <a href="meer.html">-->
+<!--                    Meer <span class="arrow" aria-hidden="true"></span>-->
+<!--                </a>-->
+                <div class="dropdown">
+                    
+                </div>
+            </nav>
+
+            <form class="search" id="searchForm" role="search">
+                <span class="search-icon" aria-hidden="true">⌕</span>
+
+                <input type="search" id="searchInput" placeholder="Waar ben je naar op zoek?" aria-label="Zoek recepten">
+
+                <button class="filter" id="filterButton" type="button" aria-label="Filter recepten">
+                    ☷ Filteren
+                    <span class="arrow" aria-hidden="true"></span>
+                </button>
+            </form>
+
+            <div class="account">
+                <a href="inloggen.html">Inloggen</a>
+                <a href="registreren.html">Account aanmaken</a>
+            </div>
+        </header>
+
+        <div class="message" id="message" aria-live="polite"></div>
+
+        <script src="navigatiebalk.js"></script>
     </header>
 
-    <!-- 2. Filter -->
+    <!-- Filter -->
     <section class="grid_child">
         <span class="section_label">Filter</span>
         <div class="filter_buttons">
-            <button type="button" data-filter="alles">alles</button>
-            <button type="button" data-filter="vlees">vlees</button>
-            <button type="button" data-filter="groenten">groenten</button>
-            <button type="button" data-filter="veganistisch">veganistisch</button>
-            <button type="button" data-filter="zeevruchten">zeevruchten</button>
-            <button type="button" data-filter="varkensvlees">varkensvlees</button>
-            <button type="button" data-filter="dessert">dessert</button>
-            <button type="button" data-filter="glutenvrij">glutenvrij</button>
-            <button type="button" data-filter="zuivelvrij">zuivelvrij</button>
-            <button type="button" data-filter="ei-vrij">ei-vrij</button>
+            <button type="button"> alles</button>
+            <button type="button"> vlees</button>
+            <button type="button" >groenten</button>
+            <button type="button" >veganistisch</button>
+            <button type="button" >zeevruchten</button>
+            <button type="button" >varkensvlees</button>
+            <button type="button" >dessert</button>
+            <button type="button" >glutenvrij</button>
+            <button type="button" >zuivelvrij</button>
+            <button type="button" >ei-vrij</button>
         </div>
     </section>
 
-    <!-- 3. Kaartengrid -->
+    <!-- Card Grid  -->
     <main class="grid_child">
-        <span class="section_label"> </span>
+        <h2 class="section_label"> </h2>
+
+<?php
+  if ($amountRow > 0) { ?>
         <div class="cards">
-
-            <article class="card" data-tag="vlees">
-                <div class="card_img"> <img src="#" alt="Card Image"></div>
+            <?php foreach ($result as $row) { ?>
+            <article class="card" <!--data-tag="vlees"-->
+                <div class="card_img"> <img src="data:image/jpeg;base64, <?php echo base64_encode($row['Gerecht_img'])?>" alt="Card Image" id="card_img"></div>
                 <div class="card_body">
-                    <span class="card_tag">vlees</span>
-                    <h3>Naam van recept</h3>
-                    <p>Korte omschrijving van het gerecht in één of twee zinnen.</p>
+                    <span class="card_tag"> <?= $row['Categorie_naam'] ?></span>
+                    <a href="#"> <h3> <?= $row['Gerecht_naam'] ?> </h3> </a>
+                    <p> <?= $row['Gerecht_uitleg'] ?> </p>
+                    <p> </p>
                 </div>
             </article>
 
-            <article class="card" data-tag="groenten">
-                <div class="card_img"><img src="#" alt="Card Image"></div>
-                <div class="card_body">
-                    <span class="card_tag">groenten</span>
-                    <h3>Naam van recept</h3>
-                    <p>Korte omschrijving van het gerecht in één of twee zinnen.</p>
-                </div>
-            </article>
-
-            <article class="card" data-tag="veganistisch">
-                <div class="card_img"><img src="#" alt="Card Image"></div>
-                <div class="card_body">
-                    <span class="card_tag">veganistisch</span>
-                    <h3>Naam van recept</h3>
-                    <p>Korte omschrijving van het gerecht in één of twee zinnen.</p>
-                </div>
-            </article>
-
-            <article class="card" data-tag="zeevruchten">
-                <div class="card_img"><img src="#" alt="Card Image"></div>
-                <div class="card_body">
-                    <span class="card_tag">zeevruchten</span>
-                    <h3>Naam van recept</h3>
-                    <p>Korte omschrijving van het gerecht in één of twee zinnen.</p>
-                </div>
-            </article>
-
-            <article class="card" data-tag="varkensvlees">
-                <div class="card_img"><img src="#" alt="Card Image"></div>
-                <div class="card_body">
-                    <span class="card_tag">varkensvlees</span>
-                    <h3>Naam van recept</h3>
-                    <p>Korte omschrijving van het gerecht in één of twee zinnen.</p>
-                </div>
-            </article>
-
-            <article class="card" data-tag="dessert">
-                <div class="card_img"><img src="#" alt="Card Image"></div>
-                <div class="card_body">
-                    <span class="card_tag">dessert</span>
-                    <h3>Naam van recept</h3>
-                    <p>Korte omschrijving van het gerecht in één of twee zinnen.</p>
-                </div>
-            </article>
-
-            <article class="card" data-tag="glutenvrij">
-                <div class="card_img"><img src="#" alt="Card Image"></div>
-                <div class="card_body">
-                    <span class="card_tag">glutenvrij</span>
-                    <h3>Naam van recept</h3>
-                    <p>Korte omschrijving van het gerecht in één of twee zinnen.</p>
-                </div>
-            </article>
-
-            <article class="card" data-tag="zuivelvrij">
-                <div class="card_img"><img src="#" alt="Card Image"></div>
-                <div class="card_body">
-                    <span class="card_tag">zuivelvrij</span>
-                    <h3>Naam van recept</h3>
-                    <p>Korte omschrijving van het gerecht in één of twee zinnen.</p>
-                </div>
-            </article>
-
-            <article class="card" data-tag="ei-vrij">
-                <div class="card_img"><img src="#" alt="Card Image"></div>
-                <div class="card_body">
-                    <span class="card_tag">ei-vrij</span>
-                    <h3>Naam van recept</h3>
-                    <p>Korte omschrijving van het gerecht in één of twee zinnen.</p>
-                </div>
-            </article>
-
+            <?php } ?>
         </div>
+
+<?php
+  }
+?>
     </main>
 
-    <!-- 4. Footer -->
+    <!-- Footer -->
     <footer class="grid_child">
-        <span class="section_label">Footer</span>
+        <h2 class="section_label">Footer</h2>
         <div class="footer_content">
 <!--            <div class="footer_logo">Logo</div>-->
             <address class="footer_contact">
-                <p><strong>E-mail</strong><br>info@voorbeeld.nl</p>
-                <p><strong>Adres</strong><br>Voorbeeldstraat 12<br>1234 AB Plaatsnaam</p>
-                <p><strong>Telefoon</strong><br>010 123 45 67</p>
+                <p><strong>E-mail</strong><br> 103608@glr.nl </p>
+                <p><strong>Adres</strong><br> Heer Bokelweg 255,<br> 3032 AD Rotterdam </p>
+                <p><strong>Telefoon</strong><br>06 123 45 67</p>
             </address>
         </div>
     </footer>
