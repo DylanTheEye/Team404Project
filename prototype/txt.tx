@@ -1,0 +1,161 @@
+<?php
+session_start();
+require "config.php";   // creates the database connection: $conn
+
+$result = "";           // message shown above the form when the recipe was added
+$fouten = [];           // list of error messages (empty = no errors)
+
+$max_bytes      = 5 * 1024 * 1024;   // biggest picture we accept: 5 MB
+$aantal_stappen = 5;                 // number of step boxes in the form
+
+// The id of the logged in user is saved in the session when the user logs in.
+$user_id = $_SESSION['user_id'] ?? null;
+// No login yet? For testing only, remove the // in front of the next line:
+// $user_id = 1;   // must be a User_id that exists in your users table
+
+//////////////////////////////////////////
+
+// Get all categories for the "Soort" choice
+$stmt = $conn->query("SELECT id, Categorie_naam FROM Gerecht_catigorie ORDER BY id");
+$categorieen = $stmt->fetchAll();
+
+// A small icon for each category id
+$iconen = [1 => '🥩', 2 => '🥗', 3 => '🌱', 4 => '🦐', 5 => '🐖', 6 => '🍰', 7 => '🌾', 8 => '🥛', 9 => '🥚'];
+
+// Empty values, so the form is empty the first time the page opens
+$naam              = "";
+$uitleg            = "";
+$ingredienten      = "";
+$gekozen_categorie = "";
+$stappen           = array_fill(0, $aantal_stappen, "");
+
+//////////////////////////////////////////
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    // The values the user typed in the form
+    $naam              = trim($_POST['naam'] ?? "");
+    $uitleg            = trim($_POST['uitleg'] ?? "");
+    $ingredienten      = trim($_POST['ingredienten'] ?? "");
+    $gekozen_categorie = $_POST['categorie'] ?? "";
+    $stappen           = $_POST['stappen'] ?? [];
+    $afbeelding        = $_FILES['afbeelding'] ?? null;     // the picture is in $_FILES, not in $_POST
+
+    // Make sure $stappen is an array with exactly 5 trimmed texts
+    if (!is_array($stappen)) {
+        $stappen = [];
+    }
+    $stappen = array_map('trim', array_slice($stappen, 0, $aantal_stappen));
+    $stappen = array_pad($stappen, $aantal_stappen, "");
+
+    //////////////////////////////////////////
+    // Check the form
+
+    if ($user_id === null) {
+        $fouten[] = "Je moet ingelogd zijn om een gerecht toe te voegen.";
+    }
+
+    if ($naam == "" || strlen($naam) > 25) {
+        $fouten[] = "Vul een naam in van maximaal 25 tekens.";
+    }
+
+    if (strlen($uitleg) > 100) {
+        $fouten[] = "De uitleg mag maximaal 100 tekens zijn.";
+    }
+
+    if ($ingredienten == "") {
+        $fouten[] = "Vul de ingrediëntenlijst in.";
+    }
+
+    // Is the chosen category really one of the categories in the database?
+    $categorie_id = 0;
+    foreach ($categorieen as $categorie) {
+        if ((string) $categorie['id'] === (string) $gekozen_categorie) {
+            $categorie_id = (int) $categorie['id'];
+        }
+    }
+    if ($categorie_id == 0) {
+        $fouten[] = "Kies een soort.";
+    }
+
+    // Only keep the steps that were filled in, the database saves them one per line
+    $ingevulde_stappen = [];
+    foreach ($stappen as $stap) {
+        if ($stap != "") {
+            $ingevulde_stappen[] = preg_replace('/\s+/', ' ', $stap);
+        }
+    }
+    if (count($ingevulde_stappen) == 0) {
+        $fouten[] = "Vul minimaal één stap in.";
+    }
+
+    // Check the picture
+    $afbeelding_data = null;
+    if ($afbeelding === null || $afbeelding['error'] == UPLOAD_ERR_NO_FILE) {
+        $fouten[] = "Kies een afbeelding.";
+    } elseif ($afbeelding['error'] == UPLOAD_ERR_INI_SIZE || $afbeelding['error'] == UPLOAD_ERR_FORM_SIZE || $afbeelding['size'] > $max_bytes) {
+        $fouten[] = "De afbeelding is te groot (maximaal 5 MB).";
+    } elseif ($afbeelding['error'] != UPLOAD_ERR_OK) {
+        $fouten[] = "Het uploaden van de afbeelding is mislukt. Probeer het opnieuw.";
+    } else {
+        // getimagesize() looks inside the file, so a text file renamed to .jpg is refused
+        $info = @getimagesize($afbeelding['tmp_name']);
+        $toegestaan = [IMAGETYPE_JPEG, IMAGETYPE_PNG, IMAGETYPE_WEBP];
+
+        if ($info === false || !in_array($info[2], $toegestaan)) {
+            $fouten[] = "Gebruik een JPG-, PNG- of WEBP-afbeelding.";
+        } else {
+            $afbeelding_data = file_get_contents($afbeelding['tmp_name']);   // the picture as data for the database
+        }
+    }
+
+    //////////////////////////////////////////
+    // Save the recipe (only when there are no errors)
+
+    if (count($fouten) == 0) {
+
+        // An empty "uitleg" is saved as NULL, the column allows that
+        if ($uitleg == "") {
+            $uitleg = null;
+        }
+
+        try {
+            $query = "INSERT INTO post (Gerecht_img, Gerecht_naam, Gerecht_uitleg, Ingredienten_lijst, Stappen, Categorie_id, User_id)
+                      VALUES (:afbeelding, :naam, :uitleg, :ingredienten, :stappen, :categorie_id, :user_id)";
+
+            $stmt = $conn->prepare($query);
+
+            $stmt->execute([
+                'afbeelding'   => $afbeelding_data,
+                'naam'         => $naam,
+                'uitleg'       => $uitleg,
+                'ingredienten' => $ingredienten,
+                'stappen'      => implode("\n", $ingevulde_stappen),
+                'categorie_id' => $categorie_id,
+                'user_id'      => $user_id
+            ]);
+
+            if ($stmt->rowCount() > 0) {
+                // Go back to the page, so refreshing does not save the recipe twice
+                header("Location: " . basename($_SERVER['PHP_SELF']) . "?gelukt=1");
+                exit;
+            } else {
+                $fouten[] = "Het gerecht kon niet worden opgeslagen.";
+            }
+
+        } catch (PDOException $e) {
+            $fouten[] = "Er is iets misgegaan met de database.";
+            // While building the site you can show the real error:
+            // echo "Error: " . $e->getMessage();
+        }
+    }
+}
+
+//////////////////////////////////////////
+
+// Coming back after a successful save
+if (isset($_GET['gelukt'])) {
+    $result = "Het gerecht is toegevoegd.";
+}
+
+include "php/views/toevoeg.html";
