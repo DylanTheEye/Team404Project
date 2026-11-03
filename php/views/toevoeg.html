@@ -5,55 +5,240 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./css/toevoeg.css">
-    <link rel="stylesheet" href="./includes/navigatiebalk/navigatiebalk.css">
+    <link rel="stylesheet" href="../../css/toegvoeg.css">
+    <link rel="stylesheet" href="../../includes/navigatiebalk/nav.css">
+    <script src="../../includes/add.js"> </script>
+    <script src="../../includes/navigatiebalk/nav.js" defer> </script>
     <title> Toevoegpagina </title>
 </head>
 <body>
-<div class="cntr_main grid_parent">
 
-    <!-- Navigatie -->
-    <div class="grid_child">
-        <header>
-            <nav class="menu" aria-label="Hoofdnavigatie">
-                <a href="#">Home</a>
-                <div class="dropdown">
-                    <div class="dropdown"> Meer <span class="arrow" aria-hidden="true"></span> </div>
-                    <div class="drop_content">
-                        <a href="index.php"> Recepten pagina</a>
-                        <a href="">Toevoeg pagina</a>
+<div class="cntr_main grid_parent">
+    <!-- 1. Navigatie -->
+    <section class="grid_child firstchild">
+        <header class="site_nav">
+            <nav class="site_nav__bar" id="siteNavBar" aria-label="Hoofdnavigatie">
+
+                <a class="site_nav__link site_nav__home" href="index.html">Home</a>
+
+                <div class="site_nav__dropdown">
+                    <button class="site_nav__link site_nav__drop_trigger" type="button"
+                            aria-haspopup="true" aria-expanded="false">
+                        Meer <span class="site_nav__arrow" aria-hidden="true"></span>
+                    </button>
+                    <div class="site_nav__drop_content">
+                        <a href="recepten.html">Recepten</a>
+                        <a href="recepten.html">Toevoegen</a>
+                    </div>
+                </div>
+
+                <form class="site_nav__search" id="searchForm" role="search">
+                    <span class="site_nav__search_icon" aria-hidden="true">⌕</span>
+                    <input class="site_nav__search_input" type="search" id="searchInput"
+                           placeholder="Zoek recepten" aria-label="Zoek recepten">
+                    <button class="site_nav__filter" id="filterButton" type="button" aria-label="Filter recepten">
+                        ☷<span class="site_nav__filter_text"> Filteren</span>
+                        <span class="site_nav__arrow" aria-hidden="true"></span>
+                    </button>
+                </form>
+
+                <div class="site_nav__account">
+                    <a href="inloggen.html">Inloggen</a>
+                    <a href="registreren.html">Account aanmaken</a>
+                </div>
+
+                <!-- hamburger button (only visible on tablet/mobile) -->
+                <button class="site_nav__toggle" id="siteNavToggle" type="button"
+                        aria-expanded="false" aria-label="Menu openen">
+                    <span class="site_nav__burger" aria-hidden="true"></span>
+                </button>
+
+            </nav>
+            <p class="site_nav__message" id="message" role="status"></p>
+        </header>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main_child secondchild">
+        <div class="add_form">
+            <form action="/toevoeg.php" method="post" >
+
+                <!--================= SECTION 1================= -->
+                <article class="add-section section1">
+                    <!-- Img upload section -->
+                    <label class="img_upload" id="uploadBox" title="Afbeelding kiezen">
+                            <span class="img_upload__icon" aria-hidden="true">
+                                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M8 22h10l4-6h14l4 6h2"/>
+                                    <path d="M8 22v30h44V32"/>
+                                    <circle cx="30" cy="37" r="9"/>
+                                    <path d="M50 6v14M43 13h14"/>
+                                </svg>
+                            </span>
+                        <img class="img_upload__preview" id="uploadPreview" alt="Voorbeeld van de gekozen afbeelding">
+                        <span class="img_upload__sr">Afbeelding kiezen (JPG, PNG of WEBP, maximaal 5 MB)</span>
+                        <input type="file" name="afbeelding" id="afbeelding" accept="image/jpeg,image/png,image/webp" data-max-bytes="5242880" required>
+                    </label>
+
+
+                    <!-- Name and description section -->
+                    <div class="add_top__fields">
+                        <div class="add_field">
+                            <label class="add_label" for="naam">Gerecht naam</label>
+                            <input class="add_input" type="text" id="naam" name="naam" maxlength="25" required
+                                   value="">
+                        </div>
+                        <div class="add_field">
+                            <label class="add_label" for="uitleg">Uitleg <span class="add_hint">(max. 100 tekens)</span></label>
+                            <textarea class="add_textarea" id="uitleg" name="uitleg" rows="3" maxlength="100"></textarea>
+                        </div>
                     </div>
 
-                </div>
-            </nav>
+                </article>
+                <!-- ================= SECTION 2 ================= -->
+                <article class="add-section section2">
+                    <fieldset calss="add_panel add_fieldset">
+                        <h3 class="add_panel__title ">Categorie</h3>
 
-            <form class="search" id="searchForm" role="search">
-                <span class="search-icon" aria-hidden="true">⌕</span>
+                        <div class="food_catigories">
+                            <label class="catigorie_item">
+                                <input type="radio" name="categorie" value="1"required>
+                                <span class="item-icon" aria-hidden="true"> <img src="img/icons/meat.svg" alt=""></span>
+                                <span>Vlees</span>
+                            </label>
+                        </div>
 
-                <input type="search" id="searchInput" placeholder="Waar ben je naar op zoek?" aria-label="Zoek recepten">
+                        <div class="food_catigories">
+                            <label class="catigorie_item">
+                                <input type="radio" name="categorie" value="1"required>
+                                <span class="item-icon" aria-hidden="true"> <img src="img/icons/pork.svg" alt=""></span>
+                                <span>Pork</span>
+                            </label>
+                        </div>
 
-                <button class="filter" id="filterButton" type="button" aria-label="Filter recepten">
-                    ☷ Filteren
-                    <span class="arrow" aria-hidden="true"></span>
-                </button>
+                        <div class="food_catigories">
+                            <label class="catigorie_item">
+                                <input type="radio" name="categorie" value="1"required>
+                                <span class="item-icon" aria-hidden="true"> <img src="img/icons/seafood.svg" alt=""></span>
+                                <span>Seafood</span>
+                            </label>
+                        </div>
+
+
+
+                        <div class="food_catigories">
+                            <label class="catigorie_item">
+                                <input type="radio" name="categorie" value="1"required>
+                                <span class="item-icon" aria-hidden="true"> <img src="img/icons/vegi.svg" alt=""></span>
+                                <span>Vegetables</span>
+                            </label>
+                        </div>
+
+
+                        <div class="food_catigories">
+                            <label class="catigorie_item">
+                                <input type="radio" name="categorie" value="1"required>
+                                <span class="item-icon" aria-hidden="true"> <img src="img/icons/vegen.svg" alt=""></span>
+                                <span>Vegan</span>
+                            </label>
+                        </div>
+
+
+
+                        <div class="food_catigories">
+                            <label class="catigorie_item">
+                                <input type="radio" name="categorie" value="1"required>
+                                <span class="item-icon" aria-hidden="true"> <img src="img/icons/dessert.svg" alt=""></span>
+                                <span>Dessert</span>
+                            </label>
+                        </div>
+
+
+
+                        <div class="food_catigories">
+                            <label class="catigorie_item">
+                                <input type="radio" name="categorie" value="1"required>
+                                <span class="item-icon" aria-hidden="true"> <img src="img/icons/eggFree.svg" alt=""></span>
+                                <span>Egg Free</span>
+                            </label>
+                        </div>
+
+                        <div class="food_catigories">
+                            <label class="catigorie_item">
+                                <input type="radio" name="categorie" value="1"required>
+                                <span class="item-icon" aria-hidden="true"> <img src="img/icons/dairyFree.svg" alt=""></span>
+                                <span>Dairy Free</span>
+                            </label>
+                        </div>
+
+
+                        <div class="food_catigories">
+                            <label class="catigorie_item">
+                                <input type="radio" name="categorie" value="1"required>
+                                <span class="item-icon" aria-hidden="true"> <img src="img/icons/glutenFree.svg" alt=""></span>
+                                <span>Gluten Free</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <div class="add_field">
+                        <label class="add_panel__title" for="ingredienten">Ingrediëntenlijst
+                            <span class="add_hint">(één ingrediënt per regel)</span></label>
+                        <textarea class="add_textarea add_textarea--tall" id="ingredienten" name="ingredienten"required></textarea>
+                        </label>
+                    </div>
+
+                </article>
+                <!-- ================= SECTION 3 ================= -->
+                <article class="add-section section3">
+                    <h2 class="add_panel__title">Stappen <span class="add_hint">(laat lege stappen open)</span></h2>
+                    <div class="add_steps">
+                        <div class="add_step">
+                            <label class="add_label" for="stap1">Stap 1</label>
+                            <textarea class="add_textarea" id="stap1" name="stappen[]" rows="3" placeholder="Wat moet er eerst gedaan worden…"required></textarea>
+                        </div>
+
+                        <div class="add_step">
+                            <label class="add_label" for="stap2">Stap 2</label>
+                            <textarea class="add_textarea" id="stap2" name="stappen[]" rows="3" placeholder="Wat moet er eerst gedaan worden…"required></textarea>
+                        </div>
+
+                        <div class="add_step">
+                            <label class="add_label" for="stap3">Stap 3</label>
+                            <textarea class="add_textarea" id="stap3" name="stappen[]" rows="3" placeholder="Wat moet er eerst gedaan worden…"required></textarea>
+                        </div>
+
+                        <div class="add_step">
+                            <label class="add_label" for="stap4">Stap 4</label>
+                            <textarea class="add_textarea" id="stap4" name="stappen[]" rows="3" placeholder="Wat moet er eerst gedaan worden…"required></textarea>
+                        </div>
+
+
+                        <div class="add_step">
+                            <label class="add_label" for="stap5">Stap 5</label>
+                            <textarea class="add_textarea" id="stap5" name="stappen[]" rows="3" placeholder="Wat moet er eerst gedaan worden…"required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="add_actions">
+                        <button class="add_button" type="submit" >
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M12 16V4M7 9l5-5 5 5M4 20h16"/>
+                            </svg>
+                            Gerecht toevoegen
+                        </button>
+                    </div>
+                </article>
+
+
             </form>
-
-            <div class="account">
-                <a href="inloggen.html">Inloggen</a>
-                <a href="registreren.html">Account aanmaken</a>
-            </div>
-        </header>
-
-        <div class="message" id="message" aria-live="polite"></div>
-    </div>
-
-    <div class="grid_child"></div>
+        </div>
+    </section>
 
 
-    <footer class="grid_child">
-        <h2 class="section_label">Footer</h2>
+    <!-- footer -->
+    <footer class="grid_child thirdchild">
         <div class="footer_content">
-            <!--            <div class="footer_logo">Logo</div>-->
             <address class="footer_contact">
                 <p><strong>E-mail</strong><br> 103608@glr.nl </p>
                 <p><strong>Adres</strong><br> Heer Bokelweg 255,<br> 3032 AD Rotterdam </p>
@@ -62,5 +247,6 @@
         </div>
     </footer>
 </div>
+
 </body>
 </html>
