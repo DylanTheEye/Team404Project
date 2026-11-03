@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/toevoeg.css">
+    <link rel="stylesheet" href="./includes/navigatiebalk/navigatiebalk.css">
+    <title> Toevoegpagina </title>
+</head>
+<body>
+<div class="cntr_main grid_parent">
+
+    <!-- Navigatie -->
+    <div class="grid_child">
+        <header>
+            <nav class="menu" aria-label="Hoofdnavigatie">
+                <a href="#">Home</a>
+                <div class="dropdown">
+                    <div class="dropdown"> Meer <span class="arrow" aria-hidden="true"></span> </div>
+                    <div class="drop_content">
+                        <a href="index.php"> Recepten pagina</a>
+                        <a href="">Toevoeg pagina</a>
+                    </div>
+
+                </div>
+            </nav>
+
+            <form class="search" id="searchForm" role="search">
+                <span class="search-icon" aria-hidden="true">⌕</span>
+
+                <input type="search" id="searchInput" placeholder="Waar ben je naar op zoek?" aria-label="Zoek recepten">
+
+                <button class="filter" id="filterButton" type="button" aria-label="Filter recepten">
+                    ☷ Filteren
+                    <span class="arrow" aria-hidden="true"></span>
+                </button>
+            </form>
+
+            <div class="account">
+                <a href="inloggen.html">Inloggen</a>
+                <a href="registreren.html">Account aanmaken</a>
+            </div>
+        </header>
+
+        <div class="message" id="message" aria-live="polite"></div>
+    </div>
+
+    <div class="grid_child"></div>
+
+
+    <footer class="grid_child">
+        <h2 class="section_label">Footer</h2>
+        <div class="footer_content">
+            <!--            <div class="footer_logo">Logo</div>-->
+            <address class="footer_contact">
+                <p><strong>E-mail</strong><br> 103608@glr.nl </p>
+                <p><strong>Adres</strong><br> Heer Bokelweg 255,<br> 3032 AD Rotterdam </p>
+                <p><strong>Telefoon</strong><br>06 123 45 67</p>
+            </address>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

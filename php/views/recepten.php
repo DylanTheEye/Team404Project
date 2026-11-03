@@ -5,96 +5,100 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./css/recepten.css">
-    <link rel="stylesheet" href="./includes/navigatiebalk/navigatiebalk.css">
+    <script src="./includes/navigatiebalk/navigatiebalk.js"></script>
+    <link rel="stylesheet" href="../../css/recepten.css">
+    <link rel="stylesheet" href="../../navigatiebalk/nav.css">
+    <script src="../../navigatiebalk/nav.js" defer> </script>
     <title>Recepten</title>
 </head>
 <body>
 <div class="cntr_main grid_parent">
 
-    <!-- Navigatie -->
-    <header class="grid_child">
-        <header>
-            <nav class="menu" aria-label="Hoofdnavigatie">
-                <a href="recepten.html">Recepten</a>
-<!--                <a href="meer.html">-->
-<!--                    Meer <span class="arrow" aria-hidden="true"></span>-->
-<!--                </a>-->
-                <div class="dropdown">
-                    
+    <!-- 1. Navigatie -->
+    <section class="grid_child">
+        <header class="site_nav">
+            <nav class="site_nav__bar" id="siteNavBar" aria-label="Hoofdnavigatie">
+
+                <a class="site_nav__link site_nav__home" href="index.html">Home</a>
+
+                <div class="site_nav__dropdown">
+                    <button class="site_nav__link site_nav__drop_trigger" type="button"
+                            aria-haspopup="true" aria-expanded="false">
+                        Meer <span class="site_nav__arrow" aria-hidden="true"></span>
+                    </button>
+                    <div class="site_nav__drop_content">
+                        <a href="recepten.html">Recepten</a>
+                        <a href="recepten.html">Toevoegen</a>
+                    </div>
                 </div>
-            </nav>
 
-            <form class="search" id="searchForm" role="search">
-                <span class="search-icon" aria-hidden="true">⌕</span>
+                <form class="site_nav__search" id="searchForm" role="search">
+                    <span class="site_nav__search_icon" aria-hidden="true">⌕</span>
+                    <input class="site_nav__search_input" type="search" id="searchInput"
+                           placeholder="Zoek recepten" aria-label="Zoek recepten">
+                    <button class="site_nav__filter" id="filterButton" type="button" aria-label="Filter recepten">
+                        ☷<span class="site_nav__filter_text"> Filteren</span>
+                        <span class="site_nav__arrow" aria-hidden="true"></span>
+                    </button>
+                </form>
 
-                <input type="search" id="searchInput" placeholder="Waar ben je naar op zoek?" aria-label="Zoek recepten">
+                <div class="site_nav__account">
+                    <a href="inloggen.html">Inloggen</a>
+                    <a href="registreren.html">Account aanmaken</a>
+                </div>
 
-                <button class="filter" id="filterButton" type="button" aria-label="Filter recepten">
-                    ☷ Filteren
-                    <span class="arrow" aria-hidden="true"></span>
+                <!-- hamburger button (only visible on tablet/mobile) -->
+                <button class="site_nav__toggle" id="siteNavToggle" type="button"
+                        aria-expanded="false" aria-label="Menu openen">
+                    <span class="site_nav__burger" aria-hidden="true"></span>
                 </button>
-            </form>
 
-            <div class="account">
-                <a href="inloggen.html">Inloggen</a>
-                <a href="registreren.html">Account aanmaken</a>
-            </div>
+            </nav>
+            <p class="site_nav__message" id="message" role="status"></p>
         </header>
+    </section>
 
-        <div class="message" id="message" aria-live="polite"></div>
-
-        <script src="navigatiebalk.js"></script>
-    </header>
-
-    <!-- Filter -->
+    <!-- 2. Filter -->
     <section class="grid_child">
         <span class="section_label">Filter</span>
         <div class="filter_buttons">
-            <button type="button"> alles</button>
-            <button type="button"> vlees</button>
-            <button type="button" >groenten</button>
-            <button type="button" >veganistisch</button>
-            <button type="button" >zeevruchten</button>
-            <button type="button" >varkensvlees</button>
-            <button type="button" >dessert</button>
-            <button type="button" >glutenvrij</button>
-            <button type="button" >zuivelvrij</button>
-            <button type="button" >ei-vrij</button>
+            <button type="button">alles</button>
+            <button type="button">vlees</button>
+            <button type="button">groenten</button>
+            <button type="button">veganistisch</button>
+            <button type="button">zeevruchten</button>
+            <button type="button">varkensvlees</button>
+            <button type="button">dessert</button>
+            <button type="button">glutenvrij</button>
+            <button type="button">zuivelvrij</button>
+            <button type="button">ei-vrij</button>
         </div>
     </section>
 
-    <!-- Card Grid  -->
+    <!-- 3. Kaartengrid -->
     <main class="grid_child">
-        <h2 class="section_label"> </h2>
-
-<?php
-  if ($amountRow > 0) { ?>
-        <div class="cards">
-            <?php foreach ($result as $row) { ?>
-            <article class="card" <!--data-tag="vlees"-->
-                <div class="card_img"> <img src="data:image/jpeg;base64, <?php echo base64_encode($row['Gerecht_img'])?>" alt="Card Image" id="card_img"></div>
-                <div class="card_body">
-                    <span class="card_tag"> <?= $row['Categorie_naam'] ?></span>
-                    <a href="#"> <h3> <?= $row['Gerecht_naam'] ?> </h3> </a>
-                    <p> <?= $row['Gerecht_uitleg'] ?> </p>
-                    <p> </p>
-                </div>
-            </article>
-
-            <?php } ?>
-        </div>
-
-<?php
-  }
-?>
+        <span class="section_label"> </span>
+        <?php if ($amountRow > 0) { ?>
+            <div class="cards">
+                <?php foreach ($result as $row) { ?>
+                    <article class="card">
+                        <div class="card_img">
+                            <img src="data:image/jpeg;base64,<?php echo base64_encode($row['Gerecht_img']); ?>" alt="<?= htmlspecialchars($row['Gerecht_naam']) ?>">
+                        </div>
+                        <div class="card_body">
+                            <span class="card_tag"><?= $row['Categorie_naam'] ?></span>
+                            <a href="#"><h3><?= $row['Gerecht_naam'] ?></h3></a>
+                            <p><?= $row['Gerecht_uitleg'] ?></p>
+                        </div>
+                    </article>
+                <?php } ?>
+            </div>
+        <?php } ?>
     </main>
 
     <!-- Footer -->
     <footer class="grid_child">
-        <h2 class="section_label">Footer</h2>
         <div class="footer_content">
-<!--            <div class="footer_logo">Logo</div>-->
             <address class="footer_contact">
                 <p><strong>E-mail</strong><br> 103608@glr.nl </p>
                 <p><strong>Adres</strong><br> Heer Bokelweg 255,<br> 3032 AD Rotterdam </p>
@@ -104,5 +108,6 @@
     </footer>
 
 </div>
+<script src="../../navigatiebalk/search.js"> </script>
 </body>
 </html>

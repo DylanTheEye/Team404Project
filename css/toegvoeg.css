@@ -5,5 +5,56 @@
 }
 
 body{
-    background-color: pink;
+    background-color:  #FFF9F3;
+    margin: 0.5em;
+    font-family: system-ui, sans-serif;
+    color: #38516D;
+}
+
+/* Everything grid */
+.cntr_main{
+    min-height: calc(100dvh - 1em);
+}
+
+
+.grid_parent{
+    display: grid;
+    gap: 0;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto 1fr auto;
+}
+
+/* ========================================== */
+
+
+.grid_child{
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+}
+
+.grid_child{
+    &:nth-child(1){
+        grid-row: 1;
+        min-height: 4.5rem;
+        justify-content: center;
+        border-bottom: 2px solid #351700;
+    }
+
+    &:nth-child(2){
+        grid-row: 2;
+    }
+
+    &:nth-child(3){
+        grid-row: 3;
+        background-color:  #F2ECE2;;
+    }
+
+    &:nth-child(4){
+        grid-row: 4;
+        border-top: 1px solid #351700;
+        box-shadow: 0 -0.5em 1em -0.5em rgb(96, 88, 110);
+    }
 }

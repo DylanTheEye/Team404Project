@@ -1,0 +1,335 @@
+/* ==========================================================
+   nav.css - responsive navbar
+   Every selector starts with .site_nav, so nothing here can
+   collide with wha.css.
+
+   Desktop (>900px):  Home | Meer v | [ search ........ Filteren ] | Inloggen  Account aanmaken
+   Mobile/tablet:     Home [ search .... filter ] [=]
+                      (hamburger opens: Meer + account links)
+   ========================================================== */
+
+.site_nav{
+    width: 100%;              /* .grid_child centers its children, so stretch ourselves */
+    max-width: 90rem;
+    background-color: #FFF9F3;
+    color: #351700;
+}
+
+.site_nav__bar{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 35px;
+    width: 100%;
+}
+
+/* ---------- Links (shared look) ---------- */
+
+.site_nav__link,
+.site_nav__account a{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 8px 0;
+    font: inherit;
+    font-size: 16px;
+    font-weight: normal;
+    color: #351700;
+    text-decoration: none;
+    background: none;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.site_nav__link:hover,
+.site_nav__link:focus-visible,
+.site_nav__account a:hover,
+.site_nav__account a:focus-visible{
+    color: #819FB3;
+    border-bottom-color: #9CB4C5;
+}
+
+.site_nav__home{ flex: none; }
+
+.site_nav__arrow{
+    flex-shrink: 0;
+    width: 8px;
+    height: 8px;
+    margin-top: -4px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform 0.25s ease, margin-top 0.25s ease;
+}
+
+/* ---------- Dropdown ---------- */
+
+.site_nav__dropdown{
+    position: relative;
+    flex: none;
+}
+
+.site_nav__drop_content{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 20;
+    min-width: 200px;
+    background-color: antiquewhite;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.site_nav__drop_content a{
+    display: block;
+    padding: 12px 16px;
+    font-size: 16px;
+    color: #351700;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.site_nav__drop_content a:hover,
+.site_nav__drop_content a:focus-visible{
+    color: #819FB3;
+}
+
+.site_nav__dropdown.is_open .site_nav__drop_content{ display: block; }
+.site_nav__dropdown.is_open .site_nav__arrow{
+    transform: rotate(225deg);
+    margin-top: 4px;
+}
+
+/* open on hover only on devices that really have hover (not touch) */
+@media (hover: hover){
+    .site_nav__dropdown:hover .site_nav__drop_content{ display: block; }
+    .site_nav__dropdown:hover .site_nav__arrow{
+        transform: rotate(225deg);
+        margin-top: 4px;
+    }
+}
+
+/* ---------- Search (always visible, shrinks to fit) ---------- */
+
+.site_nav__search{
+    display: flex;
+    flex: 1 1 16rem;
+    align-items: center;
+    height: 48px;
+    min-width: 0;
+    max-width: 760px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #CDE7EA;
+    border: 1px solid transparent;
+    border-radius: 40px;
+    box-shadow: 0 2px 8px rgba(53, 23, 0, 0.03);
+    transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.site_nav__search:hover{ box-shadow: 0 4px 14px rgba(53, 23, 0, 0.08); }
+
+.site_nav__search:focus-within{
+    border-color: #9CB4C5;
+    box-shadow: 0 0 0 3px rgba(156, 180, 197, 0.25);
+}
+
+.site_nav__search_icon{
+    flex: none;
+    padding-left: 18px;
+    font-size: 24px;
+    line-height: 1;
+    color: #351700;
+}
+
+.site_nav__search_input{
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    padding: 12px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    color: #351700;
+    text-overflow: ellipsis;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.site_nav__search_input::placeholder{
+    color: #351700;
+    opacity: 0.8;
+}
+
+.site_nav__filter{
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 100%;
+    padding: 0 20px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    color: #351700;
+    white-space: nowrap;
+    background-color: #9CB4C5;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.site_nav__filter:hover,
+.site_nav__filter:focus-visible{ background-color: #819FB3; }
+.site_nav__filter:active{ transform: scale(0.98); }
+
+.site_nav__filter .site_nav__arrow{
+    width: 7px;
+    height: 7px;
+}
+
+.site_nav__message{
+    display: none;      /* the JS switches it to block */
+    width: 100%;
+    padding-top: 12px;
+    font-size: 16px;
+    color: #351700;
+}
+/* ---------- Account ---------- */
+
+.site_nav__account{
+    display: flex;
+    flex: none;
+    align-items: center;
+    gap: 24px;
+    white-space: nowrap;
+}
+
+/* ---------- Hamburger (hidden on desktop) ---------- */
+
+.site_nav__toggle{
+    display: none;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    background-color: #CDE7EA;
+    border: 1px solid #9CB4C5;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.site_nav__burger,
+.site_nav__burger::before,
+.site_nav__burger::after{
+    display: block;
+    width: 1.25rem;
+    height: 2px;
+    background-color: #351700;
+    border-radius: 2px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.site_nav__burger{ position: relative; }
+.site_nav__burger::before,
+.site_nav__burger::after{
+    content: "";
+    position: absolute;
+    left: 0;
+}
+.site_nav__burger::before{ top: -0.4rem; }
+.site_nav__burger::after{ top: 0.4rem; }
+
+.site_nav__toggle[aria-expanded="true"] .site_nav__burger{ background-color: transparent; }
+.site_nav__toggle[aria-expanded="true"] .site_nav__burger::before{ transform: translateY(0.4rem) rotate(45deg); }
+.site_nav__toggle[aria-expanded="true"] .site_nav__burger::after{ transform: translateY(-0.4rem) rotate(-45deg); }
+
+/* ---------- Slightly tighter on smaller desktops ---------- */
+
+@media (max-width: 1100px){
+    .site_nav__bar{ gap: 20px; }
+    .site_nav__account{ gap: 16px; }
+}
+
+/* ==========================================================
+   Tablet + mobile (<= 900px)
+   Row 1 always shows: Home, search (shrinks), hamburger.
+   Hamburger reveals: Meer + account links underneath.
+   ========================================================== */
+
+@media (max-width: 900px){
+    .site_nav__bar{
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .site_nav__search{
+        order: 1;
+        flex: 1 1 0;
+        height: 44px;
+        margin: 0;
+        max-width: none;
+    }
+
+    .site_nav__toggle{
+        display: flex;
+        order: 2;
+    }
+
+    /* hidden until the hamburger is opened */
+    .site_nav__dropdown,
+    .site_nav__account{
+        display: none;
+        order: 3;
+        flex: 1 1 100%;
+    }
+
+    .site_nav__bar.is_open .site_nav__dropdown{
+        display: block;
+        padding-top: 0.5rem;
+        border-top: 1px solid #9CB4C5;
+    }
+
+    .site_nav__bar.is_open .site_nav__account{
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.25rem;
+    }
+
+    .site_nav__dropdown .site_nav__link{
+        width: 100%;
+        justify-content: space-between;
+        padding: 12px 0;
+    }
+
+    .site_nav__account a{ padding: 12px 0; }
+
+    /* dropdown becomes an inline list instead of a floating box */
+    .site_nav__drop_content{
+        position: static;
+        min-width: 0;
+        box-shadow: none;
+    }
+}
+
+
+
+/* ---------- Small phones: make the search even smaller ---------- */
+
+@media (max-width: 600px){
+    .site_nav__search{ height: 40px; }
+    .site_nav__search_icon{ padding-left: 12px; font-size: 20px; }
+    .site_nav__search_input{ padding: 8px; font-size: 14px; }
+
+    /* filter button: icon only */
+    .site_nav__filter{ padding: 0 12px; font-size: 18px; }
+    .site_nav__filter_text,
+    .site_nav__filter .site_nav__arrow{ display: none; }
+}
