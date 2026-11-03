@@ -2,8 +2,8 @@
 
 $host = 'localhost';
 $dbname = 'home_db';
-$user = 'root';
-$password = '';
+$user = 'db_stars';
+$password = 'DonoTbreaK';
 
 try {
     $pdo = new PDO(
