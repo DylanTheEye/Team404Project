@@ -1,5 +1,5 @@
 <?php
-require "config-onyi.php";
+require "config.php";
 
 $result = "";
 
@@ -14,8 +14,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
   try{
-      $query = "INSERT INTO post (afbeelding, naam, uitleg, categorie, ingredienten, stappen[]
-                VALUES(:Gerecht_img, :Gerecht_naam, :Gerecht_uitleg :Ingredienten_lijst, :Categorie_id, :Stappen)";
+      $query = "INSERT INTO post (Gerecht_img, Gerecht_naam, Gerecht_uitleg, Categorie_id, Ingredienten_lijst, Stappen
+                            VALUES(:afbeelding, :name, :uitleg :categorie, :ingredienten, :stappen)";
 
 
       $stmt = $conn->prepare($query);

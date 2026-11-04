@@ -6,9 +6,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="./includes/navigatiebalk/navigatiebalk.js"></script>
-    <link rel="stylesheet" href="../../css/recepten.css">
-    <link rel="stylesheet" href="../../navigatiebalk/nav.css">
-    <script src="../../navigatiebalk/nav.js" defer> </script>
+    <link rel="stylesheet" href="/ontkooking/Team404Project/css/recepten.css">
+    <link rel="stylesheet" href="/ontkooking/Team404Project/includes/navigatiebalk/nav.css">
+    <script src="ontkooking/Team404Project/includes/navigatiebalk/nav.js" defer> </script>
     <title>Recepten</title>
 </head>
 <body>
@@ -27,8 +27,8 @@
                         Meer <span class="site_nav__arrow" aria-hidden="true"></span>
                     </button>
                     <div class="site_nav__drop_content">
-                        <a href="recepten.html">Recepten</a>
-                        <a href="recepten.html">Toevoegen</a>
+                        <a href="/ontkooking/Team404Project/php/views/recepten.php">Recepten</a>
+                        <a href="/ontkooking/Team404Project/php/views/toevoeg.html">Toevoegen</a>
                     </div>
                 </div>
 
