@@ -1,0 +1,395 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* :root {
+    --primary-color: #4990d7;
+    --primary-color-hover: #3a78c2;
+    --secondary-color: #f5f5f5;
+    --tertiary-color: #e0e0e0;
+    --hover-color: #d0d0d0;
+    --text-color: #333;
+    --light-text-color: #888;
+} */
+
+:root {
+    /* Primary */
+    --primary-color: #cde7ea;
+    --primary-color-hover: #b6d2dc;
+
+    /* Neutral backgrounds */
+    --secondary-color: #f5f5f5;
+    --tertiary-color: #e0e0e0;
+    --hover-color: #d0d0d0;
+
+    /* Text */
+    --text-color: #333333;
+    --light-text-color: #888888;
+
+    /* Extended color palette */
+    --brown-dark: #512b12;
+    --blue-dark: #38516c;
+    --blue-muted: #9db5c5;
+    --aqua-light: #cce6e8;
+    --cream: #f1ebe1;
+    --cream-light: #fff9f4;
+
+    /* Borders and accents */
+    --border-color: #e9e2dc;
+    --white: #ffffff;
+}
+
+.light-text {
+    color: var(--light-text-color);
+    font-size: 14px;
+    margin-top: -10px;
+}
+
+
+header {
+    background-color: var(--primary-color);
+    height: 60px;
+}
+
+main {
+    background-color: var(--secondary-color);
+    padding: 20px;
+}
+
+
+
+.sections {
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+    height: 100%;
+}
+
+.white-boxy {
+    margin-top: -49px;
+    background-color: var(--white);
+    padding: 16px;
+    position: sticky;
+    top: -30px;
+
+}
+
+.section-title {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    padding: 16px;
+    border-radius: 4px;
+    position: sticky;
+    top: 0;
+}
+
+.left-section {
+    flex: 0 0 300px;
+    min-width: 0;
+    background-color: var(--white);
+    padding: 24px;
+    border-radius: 8px;
+    overflow: scroll;
+    height: calc(100vh - 109px - 40px); /* Full height minus header and padding */
+}
+
+.right-section {
+    flex: 1;
+    min-width: 0;
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 8px;
+}
+
+.materials, .ingridients {
+    margin-bottom: 20px;
+}
+
+.material-list, .ingridient-list {
+    list-style-type: none;
+    padding-left: 0px;
+
+}
+
+.material-list li, .ingridient-list li {
+    margin-bottom: 10px;
+    background-color: var(--tertiary-color);
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.material-list li:hover, .ingridient-list li:hover {
+    background-color: var(--hover-color);
+    cursor: pointer;
+    transition: transform 0.3s;
+    transform: translateY(-2px);
+    outline: black solid 1px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+
+.right-section h1, .left-section h1 {
+    margin-top: 0;
+}
+
+
+.recipe-overview {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(220px, 1fr);
+    gap: 28px;
+    align-items: start;
+    max-width: 1200px;
+}
+
+.mainImage {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: var(--secondary-color);
+}
+
+.mainImage img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.recipe-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.dish-name {
+    font-size: 32px;
+    margin: 0;
+}
+
+.description {
+    line-height: 1.6;
+    color: #555;
+    margin-top: -20px;
+}
+
+.tags{
+    display: flex;
+    margin-top: -10px;
+    gap: 12px;
+}
+
+
+.tags ul li {
+    float: left;
+    margin-right: 8px;
+}
+
+.difficulty {
+    background-color: #e8f2fc;
+    color: #2866a4;
+    border-radius: 6px;
+    text-align: center;
+    padding: 2px 12px;
+}
+
+.userCard {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: -12px;
+    margin-left: -10px;
+}
+
+.userCard p {
+    margin: 0;
+}
+
+.bottomSection {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.save-button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+}
+
+.save-button img {
+    width: 40px;
+    aspect-ratio: 1 / 1;
+    filter: grayscale(100%);
+}
+
+.save-button:hover img {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+    filter: grayscale(0%);
+}
+
+
+.start-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 30px 50px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.start-button:hover {
+    background-color: var(--primary-color-hover);
+}
+
+
+.dish-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: -10px;
+}
+
+.tinyIcon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tinyIcon img {
+    width: 20px;
+    height: 20px;
+}
+
+.eyeIcon {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.eyeIcon img {
+    width: 20px;
+    height: 20px;
+}
+
+.userCard {
+    display: flex;
+    align-items: center;
+}
+
+.userImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: 10px;
+}
+
+.userImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bottom-section {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+
+.moreFromUser {
+    margin-top: -10px;
+}
+
+
+.userRecipes {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.userRecipeCard {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--secondary-color);
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.userRecipeCard img {
+    width: 40px;
+    aspect-ratio: 1 / 1;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+
+
+.moreLikeThis {
+    margin-top: 20px;
+}
+
+.moreRecipes {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.moreRecipeCard {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--secondary-color);
+    padding: 40px 30px;
+    border-radius: 6px;
+}
+
+.moreRecipeCard img {
+    width: 40px;
+    aspect-ratio: 1 / 1;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+@media (max-width: 800px) {
+    .sections {
+        flex-direction: column;
+    }
+
+    .left-section {
+        flex: auto;
+    }
+
+    .right-section {
+        flex: auto;
+    }
+
+    .mainImage {
+        max-width: 100%;
+    }
+
+    .rows {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .recipe-overview {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .mainImage {
+        max-width: 700px;
+    }
+}
