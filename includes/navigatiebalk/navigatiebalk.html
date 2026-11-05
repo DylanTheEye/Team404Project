@@ -4,39 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="nav.css">
+    <title>Navbar</title>
+
+    <link rel="stylesheet" href="/ontkooking/Team404Project/includes/navigatiebalk/nav.css">
+    <script src="ontkooking/Team404Project/includes/navigatiebalk/nav.js" defer> </script>
 </head>
 
 <body>
-    <header class="nav_header">
-        <nav class="menu" aria-label="Hoofdnavigatie">
-            <a href="recepten.html">Recepten</a>
-            <a href="meer.html">
-                Meer <span class="arrow" aria-hidden="true"></span>
-            </a>
-        </nav>
+<header class="site_nav">
+    <nav class="site_nav__bar" id="siteNavBar" aria-label="Hoofdnavigatie">
 
-        <form class="search" id="searchForm" role="search">
-            <span class="search-icon" aria-hidden="true">⌕</span>
+        <a class="site_nav__link site_nav__home" href="index.html">Home</a>
 
-            <input type="search" id="searchInput" placeholder="Waar ben je naar op zoek?" aria-label="Zoek recepten">
+        <div class="site_nav__dropdown">
+            <button class="site_nav__link site_nav__drop_trigger" type="button"
+                    aria-haspopup="true" aria-expanded="false">
+                Meer <span class="site_nav__arrow" aria-hidden="true"></span>
+            </button>
+            <div class="site_nav__drop_content">
+                <a href="recepten.html">Recepten</a>
+                <a href="recepten.html">Toevoegen</a>
+            </div>
+        </div>
 
-            <button class="filter" id="filterButton" type="button" aria-label="Filter recepten">
-                ☷ Filteren
-                <span class="arrow" aria-hidden="true"></span>
+        <form class="site_nav__search" id="searchForm" role="search">
+            <span class="site_nav__search_icon" aria-hidden="true">⌕</span>
+            <input class="site_nav__search_input" type="search" id="searchInput"
+                   placeholder="Zoek recepten" aria-label="Zoek recepten">
+            <button class="site_nav__filter" id="filterButton" type="button" aria-label="Filter recepten">
+                ☷<span class="site_nav__filter_text"> Filteren</span>
+                <span class="site_nav__arrow" aria-hidden="true"></span>
             </button>
         </form>
 
-        <div class="account">
+        <div class="site_nav__account">
             <a href="inloggen.html">Inloggen</a>
             <a href="registreren.html">Account aanmaken</a>
         </div>
-    </header>
 
-    <div class="message" id="message" aria-live="polite"></div>
+        <!-- hamburger button (only visible on tablet/mobile) -->
+        <button class="site_nav__toggle" id="siteNavToggle" type="button"
+                aria-expanded="false" aria-label="Menu openen">
+            <span class="site_nav__burger" aria-hidden="true"></span>
+        </button>
 
-    <script src="search.js"></script>
+    </nav>
+    <p class="site_nav__message" id="message" role="status"></p>
+</header>
+
 </body>
 
 </html>
