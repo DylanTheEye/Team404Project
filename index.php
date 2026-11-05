@@ -1,7 +1,8 @@
 <?php
 require 'config.php';
 
-$query = "SELECT * FROM `post` inner join `Gerecht_catigorie` on `Categorie_id` = Gerecht_catigorie.id";
+$query = "SELECT * FROM `post` inner join `Gerecht_catigorie` on `Categorie_id` = Gerecht_catigorie.id 
+    inner join `users` on `id` = users.id";
 
 
 $stmt =$conn->prepare($query);
