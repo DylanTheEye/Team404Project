@@ -1,0 +1,182 @@
+
+/* Algemene instellingen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFF9F3;
+    color: #38516D;
+    min-height: 100vh;
+}
+
+/* Pagina */
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+/* Formulierkaart */
+.auth-card {
+    width: 100%;
+    max-width: 440px;
+    padding: 42px;
+    background-color: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 8px 35px rgba(56, 81, 109, 0.10);
+    border: 1px solid #f0ebe5;
+}
+
+/* Icoon bovenaan */
+.auth-icon {
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFF9F3;
+    border-radius: 50%;
+    font-size: 28px;
+    color: #38516D;
+}
+
+/* Titels */
+.auth-card h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #38516D;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #8995A3;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Formulier */
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 9px;
+    margin-top: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 14px 15px;
+    border: 1px solid #DCE2E9;
+    border-radius: 9px;
+    background-color: #FFF9F3;
+    color: #38516D;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+input:focus {
+    border-color: #38516D;
+    box-shadow: 0 0 0 3px rgba(56, 81, 109, 0.10);
+}
+
+input::placeholder {
+    color: #A3ADB8;
+}
+
+/* Knop */
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 28px;
+    background-color: #38516D;
+    color: #ffffff;
+    border: none;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    background-color: #293E57;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Meldingen */
+.message {
+    padding: 14px 16px;
+    margin-bottom: 22px;
+    border-radius: 9px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.success {
+    background-color: #EDF6EF;
+    border: 1px solid #C9E2CE;
+    color: #356B43;
+}
+
+.error {
+    background-color: #FFF0ED;
+    border: 1px solid #F0C4BD;
+    color: #A33C32;
+}
+
+.error strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.error ul {
+    padding-left: 20px;
+}
+
+/* Link onderaan */
+.switch-page {
+    text-align: center;
+    margin-top: 27px;
+    font-size: 14px;
+    color: #8995A3;
+    line-height: 1.6;
+}
+
+.switch-page a {
+    color: #38516D;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.switch-page a:hover {
+    text-decoration: underline;
+}
+
+/* Mobiele weergave */
+@media (max-width: 480px) {
+    .auth-card {
+        padding: 28px 22px;
+    }
+
+    .auth-card h1 {
+        font-size: 24px;
+    }
+
+    .auth-container {
+        padding: 15px;
+    }
+}

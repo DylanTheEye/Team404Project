@@ -1,20 +1,19 @@
 <?php
-require 'config.php';
 
-$query = "SELECT * FROM `post` inner join `Gerecht_catigorie` on `Categorie_id` = Gerecht_catigorie.id 
-    inner join `users` on `id` = users.id";
+require_once __DIR__ . '/config.php';
 
+$query = "
+    SELECT *
+    FROM `post`
+    INNER JOIN `Gerecht_catigorie`
+        ON `Categorie_id` = `Gerecht_catigorie`.`id`
+";
 
-$stmt =$conn->prepare($query);
+$stmt = $conn->prepare($query);
 $stmt->execute();
 
-//Fetch all the result in een array
-$result = $stmt->fetchAll();
-//
-//var_dump($result);
-
-// counts the rows
+$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $amountRow = count($result);
 
-include __DIR__ . "/php/views/recepten.php";
-
+include __DIR__ . '/php/views/recepten.php';
+?>

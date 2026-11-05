@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="22abfe77-4b91-44f7-9e81-8fa4c133abd0" name="PLESK" url="http://103608.stu.sd-lab.nl">
+      <webServer id="ff412c5f-26b8-4abe-a91e-6fbf58b71c48" name="PLESK" url="http://103608.stu.sd-lab.nl">
         <fileTransfer rootFolder="/httpdocs" host="web03.sd-lab.nl" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
