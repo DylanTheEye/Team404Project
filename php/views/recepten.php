@@ -8,7 +8,7 @@
     <script src="./includes/navigatiebalk/navigatiebalk.js"></script>
     <link rel="stylesheet" href="/ontkooking/Team404Project/css/recepten.css">
     <link rel="stylesheet" href="/ontkooking/Team404Project/includes/navigatiebalk/nav.css">
-    <script src="ontkooking/Team404Project/includes/navigatiebalk/nav.js" defer> </script>
+
     <title>Recepten</title>
 </head>
 <body>
@@ -108,6 +108,6 @@
     </footer>
 
 </div>
-<script src="../../navigatiebalk/search.js"> </script>
+
 </body>
 </html>
