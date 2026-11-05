@@ -87,7 +87,7 @@
                         </div>
                         <div class="card_body">
                             <span class="card_tag"><?= $row['Categorie_naam'] ?></span>
-                            <a href="#"><h3><?= $row['Gerecht_naam'] ?></h3></a>
+                            <a href="./pages/detail.php?id=<?= $row['Gerecht _id'] ?>"><h3><?= $row['Gerecht_naam'] ?></h3></a>
                             <p><?= $row['Gerecht_uitleg'] ?></p>
                         </div>
                     </article>
