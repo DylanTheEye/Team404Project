@@ -12,7 +12,6 @@
     <title> Toevoegpagina </title>
 </head>
 <body>
-
 <div class="cntr_main grid_parent">
     <!-- 1. Navigatie -->
     <section class="grid_child firstchild">
@@ -61,7 +60,7 @@
     <!-- Main Content -->
     <section class="main_child secondchild">
         <div class="add_form">
-            <form action="/ontkooking/Team404Project/php/views/recepten.php" method="post" >
+            <form action="/ontkooking/Team404Project/php/views/recepten.php" method="post" class="main_form" enctype="multipart/form-data">
 
                 <!--================= SECTION 1================= -->
                 <article class="add-section section1">
@@ -97,9 +96,11 @@
                 </article>
                 <!-- ================= SECTION 2 ================= -->
                 <article class="add-section section2">
-                    <fieldset calss="add_panel add_fieldset">
+                    <fieldset class="add_panel add_fieldset">
                         <h3 class="add_panel__title ">Categorie</h3>
 
+                        <div class="add_panel__content">
+                            
                         <div class="food_catigories">
                             <label class="catigorie_item">
                                 <input type="radio" name="categorie" value="1"required>
@@ -178,6 +179,8 @@
                                 <span class="item-icon" aria-hidden="true"> <img src="img/icons/glutenFree.svg" alt=""></span>
                                 <span>Gluten Free</span>
                             </label>
+                        </div>
+
                         </div>
                     </fieldset>
 

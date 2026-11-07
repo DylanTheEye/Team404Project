@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -55,7 +56,7 @@ body{
 }
 
 .thirdchild{
-    grid-row: 4;
+    grid-row: 3;
     border-top: 1px solid #351700;
     box-shadow: 0 -0.5em 1em -0.5em rgb(96, 88, 110);
 }
@@ -69,13 +70,13 @@ body{
     padding: 1.25rem;
 }
 
-/*.add-section*/ .add_panel__title{
-                     display: block;
-                     margin-bottom: 0.75rem;
-                     font-size: 1rem;
-                     font-weight: 700;
-                     color: #38516D;
-                 }
+.add_panel__title{
+    display: block;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #38516D;
+}
 
 .add_hint{
     font-size: 0.8rem;
@@ -137,9 +138,9 @@ body{
     flex-direction: column;
     gap: 0.35rem;
 }
+/* IConss */
 
-
-
+.item-icon img{height: 1.4rem; object-fit: cover; }
 /* ------------------------------------------- */
 /* Section 1 */
 
@@ -311,6 +312,272 @@ body{
     border: 1px solid #C9786B;
 }
 
+
+.add_title{
+    font-size: 1.5rem;
+    color: #38516D;
+}
+
+.add_form{
+    display: flex;
+    width: 100%;
+}
+
+
+.add_form form{ flex: 1; min-width: 0; }
+
+/* main is the beige section from wha.css, panels are cream on top of it */
+.add_panel{
+    background-color: #FFF9F3;
+    border: 1px solid #9CB4C5;
+    border-radius: 0.5em;
+    padding: 1.25rem;
+}
+
+.add_panel__title{
+    display: block;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #38516D;
+}
+
+.add_panel__content{
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+    border: solid transparent;
+    flex-wrap: wrap;
+}
+
+.add_hint{
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: #38516D;
+    opacity: 0.8;
+}
+
+/* ---------- Fields ---------- */
+
+.add_field{
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+}
+
+.add_field:last-child{ margin-bottom: 0; }
+
+.add_label{
+    font-weight: 600;
+    color: #38516D;
+}
+
+.add_input,
+.add_textarea{
+    width: 100%;
+    padding: 0.6em 0.8em;
+    font: inherit;
+    color: #351700;
+    background-color: #FFFFFF;
+    border: 1px solid #9CB4C5;
+    border-radius: 0.4em;
+}
+
+.add_textarea{
+    min-height: 5rem;
+    resize: vertical;
+}
+
+.add_textarea--tall{ min-height: 16rem; }
+
+.add_input:focus-visible,
+.add_textarea:focus-visible{
+    outline: 2px solid #38516D;
+    outline-offset: 1px;
+}
+
+/* ---------- Top panel: image + name + description ---------- */
+
+.add_top{
+    display: grid;
+    grid-template-columns: 12rem 1fr;
+    gap: 1.25rem;
+    align-items: start;
+}
+
+.add_upload{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    overflow: hidden;
+    color: #38516D;
+    background-color: #FFFFFF;
+    border: 2px dashed #9CB4C5;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.add_upload:hover{ background-color: #CDE7EA; }
+.add_upload:focus-within{ outline: 2px solid #38516D; outline-offset: 2px; }
+
+.add_upload__icon svg{
+    display: block;
+    width: 4rem;
+    height: 4rem;
+}
+
+.add_upload__preview{
+    display: none;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.add_upload.has_image{ border-style: solid; }
+.add_upload.has_image .add_upload__preview{ display: block; }
+.add_upload.has_image .add_upload__icon{ display: none; }
+
+/* the real file input covers the whole box (invisible but clickable/keyboard-focusable) */
+.add_upload input[type="file"]{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* visually hidden text for screen readers */
+.add_sr{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* ---------- Soort + ingredients ---------- */
+
+.add_mid{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 1.25rem;
+    align-items: start;
+}
+
+.add_fieldset{min-width: 0;}
+
+/* keep the legend inside the box instead of sitting on the border line */
+.add_fieldset legend{
+    float: left;
+    width: 100%;
+    padding: 0;
+}
+.add_fieldset .add_cats{ clear: both; }
+
+/* 2 columns when there is room, 1 column when the box is narrow (never overflows) */
+.add_cats{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+    gap: 0.5rem;
+}
+
+.add_cat{
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.6rem;
+    color: #38516D;
+    background-color: #FFFFFF;
+    border: 1px solid #CDE7EA;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.add_cat:hover{ border-color: #9CB4C5; }
+.add_cat:has(input:checked){
+    background-color: #CDE7EA;
+    border-color: #9CB4C5;
+}
+
+.add_cat input{ accent-color: #351700; }
+.add_cat__icon{ font-size: 1.4rem; line-height: 1; }
+
+/* ---------- Steps ---------- */
+
+.add_steps{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.add_step{
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+/* ---------- Submit ---------- */
+
+.add_actions{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.add_button{
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7em 1.4em;
+    font: inherit;
+    color: #FFF9F3;
+    background-color: #351700;
+    border: 0;
+    border-radius: 0.4em;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+}
+
+.add_button:hover,
+.add_button:focus-visible{ background-color: #819FB3; color: #351700; }
+
+.add_button:disabled{
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ---------- Messages ---------- */
+
+.add_alert{
+    width: 100%;
+    max-width: 70rem;
+    margin-bottom: 1.25rem;
+    padding: 0.9rem 1.1rem;
+    color: #351700;
+    border-radius: 0.5em;
+}
+
+.add_alert ul{ margin-top: 0.4rem; padding-left: 1.25rem; }
+.add_alert a{ color: inherit; }
+
+.add_alert--ok{
+    background-color: #CDE7EA;
+    border: 1px solid #9CB4C5;
+}
+
+.add_alert--error{
+    background-color: #FBE4E0;
+    border: 1px solid #C9786B;
+}
+
+
 /* ========================================== */
 /* Footer */
 .footer_content{
@@ -370,4 +637,20 @@ body{
     .cards{
         grid-template-columns: repeat(3, 1fr);
     }
+
+        .add_top,
+    .add_mid,
+    .add_steps{
+        grid-template-columns: 1fr;
+    }
+
+    .add_upload{
+        width: 12rem;
+        max-width: 100%;
+    }
+
+    .add_textarea--tall{ min-height: 10rem; }
+
+    .add_actions{ justify-content: stretch; }
+    .add_button{ width: 100%; justify-content: center; }
 }
