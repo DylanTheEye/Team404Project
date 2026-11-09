@@ -19,7 +19,7 @@
         <header class="site_nav">
             <nav class="site_nav__bar" id="siteNavBar" aria-label="Hoofdnavigatie">
 
-                <a class="site_nav__link site_nav__home" href="index.html">Home</a>
+                <a class="site_nav__link site_nav__home" href="index.php">Home</a>
 
                 <div class="site_nav__dropdown">
                     <button class="site_nav__link site_nav__drop_trigger" type="button"
@@ -43,8 +43,20 @@
                 </form>
 
                 <div class="site_nav__account">
-                    <a href="inloggen.html">Inloggen</a>
-                    <a href="registreren.html">Account aanmaken</a>
+                    <?php if (isset($_SESSION['user_id'])): ?>
+
+                        <span>
+            Welkom, <?= htmlspecialchars($_SESSION['username'] ?? '') ?>
+        </span>
+
+                        <a href="logout.php">Uitloggen</a>
+
+                    <?php else: ?>
+
+                        <a href="login.php">Inloggen</a>
+                        <a href="register.php">Account aanmaken</a>
+
+                    <?php endif; ?>
                 </div>
 
                 <!-- hamburger button (only visible on tablet/mobile) -->
