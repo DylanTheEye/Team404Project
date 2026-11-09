@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1bd5e9e0-bfbb-43e5-8f72-fca74b9d7174" name="Changes" comment="alles">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Team404Project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/navigatiebalk/navigatiebalk.html" beforeDir="false" afterPath="$PROJECT_DIR$/includes/navigatiebalk/navigatiebalk.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth.css" beforeDir="false" afterPath="$PROJECT_DIR$/auth.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/views/recepten.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/views/recepten.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/views/toevoeg.html" beforeDir="false" afterPath="$PROJECT_DIR$/php/views/toevoeg.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +61,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "Merging main",
+    "git-widget-placeholder": "main",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
@@ -95,6 +92,7 @@
       <updated>1793867257166</updated>
       <workItem from="1793867258086" duration="1144000" />
       <workItem from="1793868458862" duration="5676000" />
+      <workItem from="1794209583761" duration="4168000" />
     </task>
     <task id="LOCAL-00001" summary="alles">
       <option name="closed" value="true" />
