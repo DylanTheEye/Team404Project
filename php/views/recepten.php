@@ -1,12 +1,5 @@
-
-<?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-?>
-
 <!doctype html>
-<html lang="nl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -26,7 +19,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <header class="site_nav">
             <nav class="site_nav__bar" id="siteNavBar" aria-label="Hoofdnavigatie">
 
-                <a class="site_nav__link site_nav__home" href="/ontkooking/Team404Project/index.php">Home</a>
+                <a class="site_nav__link site_nav__home" href="index.php">Home</a>
 
                 <div class="site_nav__dropdown">
                     <button class="site_nav__link site_nav__drop_trigger" type="button"
@@ -53,15 +46,15 @@ if (session_status() === PHP_SESSION_NONE) {
                     <?php if (isset($_SESSION['user_id'])): ?>
 
                         <span>
-                            Welkom, <?= htmlspecialchars($_SESSION['username'] ?? '', ENT_QUOTES, 'UTF-8') ?>
-                        </span>
+            Welkom, <?= htmlspecialchars($_SESSION['username'] ?? '') ?>
+        </span>
 
-                        <a href="/ontkooking/Team404Project/logout.php">Uitloggen</a>
+                        <a href="logout.php">Uitloggen</a>
 
                     <?php else: ?>
 
-                        <a href="/ontkooking/Team404Project/login.php">Inloggen</a>
-                        <a href="/ontkooking/Team404Project/register.php">Account aanmaken</a>
+                        <a href="login.php">Inloggen</a>
+                        <a href="register.php">Account aanmaken</a>
 
                     <?php endif; ?>
                 </div>

@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1bd5e9e0-bfbb-43e5-8f72-fca74b9d7174" name="Changes" comment="alles">
+    <list default="true" id="1bd5e9e0-bfbb-43e5-8f72-fca74b9d7174" name="Changes" comment="homepagina inloggen werkt en registeren, ook los van de homepagina">
+      <change afterPath="$PROJECT_DIR$/includes/navigatiebalk/navigatiebalk.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth.css" beforeDir="false" afterPath="$PROJECT_DIR$/auth.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/navigatiebalk/nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/navigatiebalk/nav.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/views/recepten.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/views/recepten.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,12 +32,12 @@
     &quot;assignee&quot;: &quot;Kai6769&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/DylanTheEye/Team404Project.git&quot;,
-    &quot;accountId&quot;: &quot;3a1b7a67-2731-49bc-9f8e-1123e01f4a1c&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/DylanTheEye/Team404Project.git",
+    "accountId": "e6ae3242-3378-483c-8a62-4b9818b4c166"
   }
-}</component>
+}]]></component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/opt/homebrew/Cellar/php/8.4.10/bin/php" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8,
@@ -69,6 +67,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/includes/navigatiebalk" />
       <recent name="$PROJECT_DIR$/php/views" />
     </key>
   </component>
@@ -92,7 +91,7 @@
       <updated>1793867257166</updated>
       <workItem from="1793867258086" duration="1144000" />
       <workItem from="1793868458862" duration="5676000" />
-      <workItem from="1794209583761" duration="4168000" />
+      <workItem from="1794209583761" duration="5085000" />
     </task>
     <task id="LOCAL-00001" summary="alles">
       <option name="closed" value="true" />
@@ -110,7 +109,15 @@
       <option name="project" value="LOCAL" />
       <updated>1793873362909</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="homepagina inloggen werkt en registeren, ook los van de homepagina">
+      <option name="closed" value="true" />
+      <created>1794213915168</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1794213915168</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +136,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="alles" />
-    <option name="LAST_COMMIT_MESSAGE" value="alles" />
+    <MESSAGE value="homepagina inloggen werkt en registeren, ook los van de homepagina" />
+    <option name="LAST_COMMIT_MESSAGE" value="homepagina inloggen werkt en registeren, ook los van de homepagina" />
   </component>
 </project>
