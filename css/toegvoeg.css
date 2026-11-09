@@ -638,7 +638,7 @@ body{
         grid-template-columns: repeat(3, 1fr);
     }
 
-        .add_top,
+    .add_top,
     .add_mid,
     .add_steps{
         grid-template-columns: 1fr;

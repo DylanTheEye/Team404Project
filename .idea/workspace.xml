@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="1bd5e9e0-bfbb-43e5-8f72-fca74b9d7174" name="Changes" comment="homepagina inloggen werkt en registeren, ook los van de homepagina">
-      <change afterPath="$PROJECT_DIR$/includes/navigatiebalk/navigatiebalk.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/navigatiebalk/nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/navigatiebalk/nav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/views/recepten.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/views/recepten.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +34,6 @@
     "url": "https://github.com/DylanTheEye/Team404Project.git",
     "accountId": "e6ae3242-3378-483c-8a62-4b9818b4c166"
   }
-}]]></component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/opt/homebrew/Cellar/php/8.4.10/bin/php" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8,
@@ -64,7 +60,7 @@
     "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/includes/navigatiebalk" />
@@ -91,7 +87,6 @@
       <updated>1793867257166</updated>
       <workItem from="1793867258086" duration="1144000" />
       <workItem from="1793868458862" duration="5676000" />
-      <workItem from="1794209583761" duration="5085000" />
     </task>
     <task id="LOCAL-00001" summary="alles">
       <option name="closed" value="true" />

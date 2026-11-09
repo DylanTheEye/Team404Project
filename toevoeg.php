@@ -4,42 +4,48 @@ require "config.php";
 $result = "";
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-  $Gerecht_id = $_POST['Gerecht_id'];
-  $Gerecht_img = $_POST['Gerecht_img'];
-  $Gerecht_naam = $_POST['Gerecht_naam'];
-  $Gerecht_uitleg = $_POST['Gerecht_uitleg'];
-  $Ingredienten_lijst = $_POST['Ingredienten_lijst'];
-  $Stappen = $_POST['Stappen'];
-  $Categorie_id = $_POST['Categorie_id'];
+    if (!isset($_FILES['afbeelding']) ||
+        $_FILES['afbeelding']['error'] !== UPLOAD_ERR_OK) {
+        throw new Exception("Image upload failed.");
+    }
+
+    $Gerecht_naam = $_POST['Gerecht_naam'];
+    $Gerecht_uitleg = $_POST['Gerecht_uitleg'];
+    $Ingredienten_lijst = $_POST['Ingredienten_lijst'];
+    $Stappen = implode("\n", $_POST['stappen']);
+    $Categorie_id = $_POST['Categorie_id'];
 
 
-  try{
-      $query = "INSERT INTO post (Gerecht_img, Gerecht_naam, Gerecht_uitleg, Categorie_id, Ingredienten_lijst, Stappen
+    try{
+        $query = "INSERT INTO post (Gerecht_img, Gerecht_naam, Gerecht_uitleg, Categorie_id, Ingredienten_lijst, Stappen
                             VALUES(:afbeelding, :name, :uitleg :categorie, :ingredienten, :stappen)";
 
 
-      $stmt = $conn->prepare($query);
+        $stmt = $conn->prepare($query);
 
-      $stmt->execute([
-          'Gerecht_img' => $Gerecht_img,
-          'Gerecht_naam' => $Gerecht_naam,
-          'Gerecht_uitleg' => $Gerecht_uitleg,
-          'Ingredienten_lijst' => $Ingredienten_lijst,
-          'Categorie_id' => $Categorie_id,
-          'Stappen' => $Stappen
-      ]);
-
-      if($stmt->rowCount() > 0){
-          $result = "{$Gerecht_naam} was added succesfully </br>";
-      } else{
-          $result = "Error </br>";
-      }
+        $stmt->execute([
+            ':afbeelding' => $Gerecht_img,
+            ':naam' => $Gerecht_naam,
+            ':uitleg' => $Gerecht_uitleg,
+            ':categorie' => $Categorie_id,
+            ':ingredienten' => $Ingredienten_lijst,
+            ':stappen' => $Stappen
+        ]);
 
 
-  } catch (PDOException $e) {
-      echo"Something went wrong</br>";
-      echo "Error:" .$e->getMessage();
-  }
+        if($stmt->rowCount()){
+            $result = "{$Gerecht_naam} was added successfully </br>";
+        } else{
+            $result = "Something went wrong </br>";
+        }
+
+        header('Location: ./index.php');
+        exit;
+
+    } catch (PDOException $e) {
+        echo"Database connection went wrong</br>";
+        echo "Error:" .$e->getMessage();
+    }
 
 
 
@@ -48,4 +54,4 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 
-include "php/views/toevoeg.html";
+include "./index.php";
