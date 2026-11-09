@@ -30,7 +30,7 @@
                     </button>
                     <div class="site_nav__drop_content">
                         <a href="/ontkooking/Team404Project/index.php">Recepten</a>
-                        <a href="/ontkooking/Team404Project/php/views/toevoeg.html">Toevoegen</a>
+                        <a href="/ontkooking/Team404Project/php/views/toevoeg.html"> Toevoegen </a>
                     </div>
                 </div>
 
@@ -63,7 +63,7 @@
     <!-- Main Content -->
     <section class="main_child secondchild">
         <div class="add_form">
-            <form action="/ontkooking/Team404Project/php/views/recepten.php" method="post" class="main_form" enctype="multipart/form-data">
+            <form action="/ontkooking/Team404Project/toevoeg.php" method="POST" enctype="multipart/form-data" class="main_form">
 
                 <!--================= SECTION 1================= -->
                 <article class="add-section section1">
@@ -106,7 +106,7 @@
 
                             <div class="food_catigories">
                                 <label class="catigorie_item">
-                                    <input type="radio" name="categorie" value="1"required>
+                                    <input type="radio" name="categorie" value="1"  required>
                                     <span class="item-icon" aria-hidden="true"> <img src="/ontkooking/Team404Project/assets/icons/meat.svg" alt=""></span>
                                     <span>Vlees</span>
                                 </label>
@@ -114,7 +114,7 @@
 
                             <div class="food_catigories">
                                 <label class="catigorie_item">
-                                    <input type="radio" name="categorie" value="1"required>
+                                    <input type="radio" name="categorie"  value="2" required>
                                     <span class="item-icon" aria-hidden="true"> <img src="/ontkooking/Team404Project/assets/icons/pork.svg" alt=""></span>
                                     <span>Varkensvlees</span>
                                 </label>
@@ -122,7 +122,7 @@
 
                             <div class="food_catigories">
                                 <label class="catigorie_item">
-                                    <input type="radio" name="categorie" value="1"required>
+                                    <input type="radio" name="categorie" value="3" required>
                                     <span class="item-icon" aria-hidden="true"> <img src="/ontkooking/Team404Project/assets/icons/seafood.svg" alt=""></span>
                                     <span>Zeevruchten</span>
                                 </label>
@@ -132,7 +132,7 @@
 
                             <div class="food_catigories">
                                 <label class="catigorie_item">
-                                    <input type="radio" name="categorie" value="1"required>
+                                    <input type="radio" name="categorie"  value="4"  required>
                                     <span class="item-icon" aria-hidden="true"> <img src="/ontkooking/Team404Project/assets/icons/vegi.svg" alt=""></span>
                                     <span>Groenten</span>
                                 </label>
@@ -141,7 +141,7 @@
 
                             <div class="food_catigories">
                                 <label class="catigorie_item">
-                                    <input type="radio" name="categorie" value="1"required>
+                                    <input type="radio" name="categorie" value="5" required>
                                     <span class="item-icon" aria-hidden="true"> <img src="/ontkooking/Team404Project/assets/icons/vegen.svg" alt=""></span>
                                     <span>Veganistisch</span>
                                 </label>
@@ -151,7 +151,7 @@
 
                             <div class="food_catigories">
                                 <label class="catigorie_item">
-                                    <input type="radio" name="categorie" value="1"required>
+                                    <input type="radio" name="categorie" value="6" required>
                                     <span class="item-icon" aria-hidden="true"> <img src="/ontkooking/Team404Project/assets/icons/dessert.svg" alt=""></span>
                                     <span>Dessert</span>
                                 </label>
@@ -161,7 +161,7 @@
 
                             <div class="food_catigories">
                                 <label class="catigorie_item">
-                                    <input type="radio" name="categorie" value="1"required>
+                                    <input type="radio" name="categorie" value="7" required>
                                     <span class="item-icon" aria-hidden="true"> <img src="/ontkooking/Team404Project/assets/icons/eggFree.svg" alt=""></span>
                                     <span>Zonder eieren</span>
                                 </label>
@@ -169,7 +169,7 @@
 
                             <div class="food_catigories">
                                 <label class="catigorie_item">
-                                    <input type="radio" name="categorie" value="1"required>
+                                    <input type="radio" name="categorie" value="8" required>
                                     <span class="item-icon" aria-hidden="true"> <img src="/ontkooking/Team404Project/assets/icons/dairyFree.svg" alt=""></span>
                                     <span>Zonder zuivel</span>
                                 </label>
@@ -178,7 +178,7 @@
 
                             <div class="food_catigories">
                                 <label class="catigorie_item">
-                                    <input type="radio" name="categorie" value="1"required>
+                                    <input type="radio" name="categorie" value="9" required>
                                     <span class="item-icon" aria-hidden="true"> <img src="/ontkooking/Team404Project/assets/icons/glutenFree.svg" alt=""></span>
                                     <span>Glutenvrij</span>
                                 </label>
@@ -191,7 +191,6 @@
                         <label class="add_panel__title" for="ingredienten">Ingrediëntenlijst
                             <span class="add_hint">(één ingrediënt per regel)</span></label>
                         <textarea class="add_textarea add_textarea--tall" id="ingredienten" name="ingredienten"required></textarea>
-                        </label>
                     </div>
 
                 </article>
@@ -201,28 +200,28 @@
                     <div class="add_steps">
                         <div class="add_step">
                             <label class="add_label" for="stap1">Stap 1</label>
-                            <textarea class="add_textarea" id="stap1" name="stappen" rows="3" placeholder="Wat moet er eerst gedaan worden…"required></textarea>
+                            <textarea class="add_textarea" id="stap1" name="stappen[]" rows="3" placeholder="Wat moet er eerst gedaan worden…"></textarea>
                         </div>
 
                         <div class="add_step">
                             <label class="add_label" for="stap2">Stap 2</label>
-                            <textarea class="add_textarea" id="stap2" name="stappen" rows="3" placeholder="Wat moet er eerst gedaan worden…"required></textarea>
+                            <textarea class="add_textarea" id="stap2" name="stappen[]" rows="3" placeholder="Wat moet er eerst gedaan worden…"></textarea>
                         </div>
 
                         <div class="add_step">
                             <label class="add_label" for="stap3">Stap 3</label>
-                            <textarea class="add_textarea" id="stap3" name="stappen" rows="3" placeholder="Wat moet er eerst gedaan worden…"required></textarea>
+                            <textarea class="add_textarea" id="stap3" name="stappen[]" rows="3" placeholder="Wat moet er eerst gedaan worden…"></textarea>
                         </div>
 
                         <div class="add_step">
                             <label class="add_label" for="stap4">Stap 4</label>
-                            <textarea class="add_textarea" id="stap4" name="stappen" rows="3" placeholder="Wat moet er eerst gedaan worden…"required></textarea>
+                            <textarea class="add_textarea" id="stap4" name="stappen[]" rows="3" placeholder="Wat moet er eerst gedaan worden…"></textarea>
                         </div>
 
 
                         <div class="add_step">
                             <label class="add_label" for="stap5">Stap 5</label>
-                            <textarea class="add_textarea" id="stap5" name="stappen" rows="3" placeholder="Wat moet er eerst gedaan worden…"required></textarea>
+                            <textarea class="add_textarea" id="stap5" name="stappen[]" rows="3" placeholder="Wat moet er eerst gedaan worden…"></textarea>
                         </div>
                     </div>
 
