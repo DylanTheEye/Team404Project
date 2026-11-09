@@ -19,7 +19,7 @@
         <header class="site_nav">
             <nav class="site_nav__bar" id="siteNavBar" aria-label="Hoofdnavigatie">
 
-                <a class="site_nav__link site_nav__home" href="index.html">Home</a>
+                <a class="site_nav__link site_nav__home" href="index.php">Home</a>
 
                 <div class="site_nav__dropdown">
                     <button class="site_nav__link site_nav__drop_trigger" type="button"
@@ -27,7 +27,7 @@
                         Meer <span class="site_nav__arrow" aria-hidden="true"></span>
                     </button>
                     <div class="site_nav__drop_content">
-                        <a href="/ontkooking/Team404Project/php/views/recepten.php">Recepten</a>
+                        <a href="./index.php">Recepten</a>
                         <a href="/ontkooking/Team404Project/php/views/toevoeg.html">Toevoegen</a>
                     </div>
                 </div>
@@ -43,8 +43,20 @@
                 </form>
 
                 <div class="site_nav__account">
-                    <a href="inloggen.html">Inloggen</a>
-                    <a href="registreren.html">Account aanmaken</a>
+                    <?php if (isset($_SESSION['user_id'])): ?>
+
+                        <span>
+            Welkom, <?= htmlspecialchars($_SESSION['username'] ?? '') ?>
+        </span>
+
+                        <a href="logout.php">Uitloggen</a>
+
+                    <?php else: ?>
+
+                        <a href="login.php">Inloggen</a>
+                        <a href="register.php">Account aanmaken</a>
+
+                    <?php endif; ?>
                 </div>
 
                 <!-- hamburger button (only visible on tablet/mobile) -->
@@ -86,8 +98,8 @@
                             <img src="data:image/jpeg;base64,<?php echo base64_encode($row['Gerecht_img']); ?>" alt="<?= htmlspecialchars($row['Gerecht_naam']) ?>">
                         </div>
                         <div class="card_body">
-                            <span class="card_tag"><?= $row['Categorie_naam'] ?></span>
-                            <a href="./pages/detail.php?id=<?= $row['Gerecht _id'] ?>"><h3><?= $row['Gerecht_naam'] ?></h3></a>
+                            <span class="card_tag"><?= htmlspecialchars ($row['Categorie_naam']) ?></span>
+                            <a href="./pages/detail.php?id=<?= $row['Gerecht _id'] ?>"><h3><?= htmlspecialchars($row['Gerecht_naam'] )?></h3></a>
                             <p><?= $row['Gerecht_uitleg'] ?></p>
                         </div>
                     </article>

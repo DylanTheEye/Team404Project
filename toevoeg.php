@@ -1,51 +1,136 @@
+
 <?php
-require "config.php";
 
-$result = "";
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 
-if($_SERVER['REQUEST_METHOD'] == 'POST') {
-  $Gerecht_id = $_POST['Gerecht_id'];
-  $Gerecht_img = $_POST['Gerecht_img'];
-  $Gerecht_naam = $_POST['Gerecht_naam'];
-  $Gerecht_uitleg = $_POST['Gerecht_uitleg'];
-  $Ingredienten_lijst = $_POST['Ingredienten_lijst'];
-  $Stappen = $_POST['Stappen'];
-  $Categorie_id = $_POST['Categorie_id'];
+require_once __DIR__ . '/config.php';
 
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  try{
-      $query = "INSERT INTO post (Gerecht_img, Gerecht_naam, Gerecht_uitleg, Categorie_id, Ingredienten_lijst, Stappen
-                            VALUES(:afbeelding, :name, :uitleg :categorie, :ingredienten, :stappen)";
-
-
-      $stmt = $conn->prepare($query);
-
-      $stmt->execute([
-          'Gerecht_img' => $Gerecht_img,
-          'Gerecht_naam' => $Gerecht_naam,
-          'Gerecht_uitleg' => $Gerecht_uitleg,
-          'Ingredienten_lijst' => $Ingredienten_lijst,
-          'Categorie_id' => $Categorie_id,
-          'Stappen' => $Stappen
-      ]);
-
-      if($stmt->rowCount() > 0){
-          $result = "{$Gerecht_naam} was added succesfully </br>";
-      } else{
-          $result = "Error </br>";
-      }
-
-
-  } catch (PDOException $e) {
-      echo"Something went wrong</br>";
-      echo "Error:" .$e->getMessage();
-  }
-
-
-
-} else{
-    echo "The form was not sent correctly. <br/>";
+// Check POST request
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    die("ERROR: Form was not submitted using POST.");
 }
 
+$required = ['naam', 'uitleg', 'categorie', 'ingredienten', 'stappen'];
 
-include "php/views/toevoeg.html";
+foreach ($required as $field) {
+    if (!isset($_POST[$field])) {
+        die("ERROR: Missing field: " . $field);
+    }
+}
+
+$destination = null;
+
+try {
+
+    // Get form data
+    $naam = trim($_POST['naam']);
+    $uitleg = trim($_POST['uitleg']);
+    $categorie = $_POST['categorie'];
+    $ingredienten = trim($_POST['ingredienten']);
+
+    // Combine recipe steps
+    if (!is_array($_POST['stappen'])) {
+        throw new Exception("Invalid steps format.");
+    }
+
+    $stappen = implode("\n", array_filter(
+        $_POST['stappen'],
+        fn($stap) => is_string($stap) && trim($stap) !== ''
+    ));
+
+    // Check image
+    if (!isset($_FILES['afbeelding'])) {
+        throw new Exception("No image received.");
+    }
+
+    $image = $_FILES['afbeelding'];
+
+    if ($image['error'] !== UPLOAD_ERR_OK) {
+        throw new Exception("Image upload error: " . $image['error']);
+    }
+
+    if ($image['size'] > 5 * 1024 * 1024) {
+        throw new Exception("Image is too large. Maximum 5 MB.");
+    }
+
+    // Validate image
+    $imageInfo = getimagesize($image['tmp_name']);
+
+    if ($imageInfo === false) {
+        throw new Exception("Invalid image.");
+    }
+
+    $types = [
+        IMAGETYPE_JPEG => 'jpg',
+        IMAGETYPE_PNG => 'png',
+        IMAGETYPE_WEBP => 'webp'
+    ];
+
+
+
+    if (!isset($types[$imageInfo[2]])) {
+        throw new Exception("Unsupported image type.");
+    }
+
+//    Image to blob
+    $blob_image = file_get_contents($image['tmp_name']);
+
+
+    // Insert recipe into database
+    $query = "INSERT INTO post
+    (
+        Gerecht_img,
+        Gerecht_naam,
+        Gerecht_uitleg,
+        Categorie_id,
+        Ingredienten_lijst,
+        Stappen
+    )
+    VALUES
+    (
+        :afbeelding,
+        :naam,
+        :uitleg,
+        :categorie,
+        :ingredienten,
+        :stappen
+    )";
+
+    $stmt = $conn->prepare($query);
+
+    $stmt->execute([
+        ':afbeelding' => $blob_image,
+        ':naam' => $naam,
+        ':uitleg' => $uitleg,
+        ':categorie' => $categorie,
+        ':ingredienten' => $ingredienten,
+        ':stappen' => $stappen
+    ]);
+
+
+    header('Location: ./index.php');
+    exit;
+
+
+} catch (PDOException $e) {
+
+    if ($destination !== null && file_exists($destination)) {
+        unlink($destination);
+    }
+
+    echo "<h2>DATABASE ERROR:</h2>";
+    echo htmlspecialchars($e->getMessage());
+
+} catch (Throwable $e) {
+
+    if ($destination !== null && file_exists($destination)) {
+        unlink($destination);
+    }
+
+    echo "<h2>ERROR:</h2>";
+    echo htmlspecialchars($e->getMessage());
+}
+

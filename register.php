@@ -1,7 +1,10 @@
-
 <?php
 session_start();
-require_once 'database.php';
+require_once __DIR__ . '/database.php';
+
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
 
 $fouten = [];
 
@@ -14,15 +17,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
 
-    // Controleren of alle velden zijn ingevuld
     if ($username === '') {
         $fouten[] = 'Vul een gebruikersnaam in.';
+    } elseif (strlen($username) > 25) {
+        $fouten[] = 'Je gebruikersnaam mag maximaal 25 tekens bevatten.';
     }
 
     if ($email === '') {
         $fouten[] = 'Vul een e-mailadres in.';
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $fouten[] = 'Vul een geldig e-mailadres in.';
+    } elseif (strlen($email) > 25) {
+        $fouten[] = 'Je e-mailadres mag maximaal 25 tekens bevatten.';
     }
 
     if ($password === '') {
@@ -31,47 +37,42 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $fouten[] = 'Je wachtwoord moet minimaal 8 tekens bevatten.';
     }
 
-    // Alleen controleren als de invoer geldig is
     if (empty($fouten)) {
-
-        // Gebruikersnaam controleren
-        $checkUsername = $pdo->prepare(
-                'SELECT id FROM users WHERE username = ?'
-        );
-        $checkUsername->execute([$username]);
-
-        // E-mailadres controleren
-        $checkEmail = $pdo->prepare(
-                'SELECT id FROM users WHERE email = ?'
-        );
-        $checkEmail->execute([$email]);
-
-        $usernameBestaat = $checkUsername->fetch();
-        $emailBestaat = $checkEmail->fetch();
-
-        // Beide controles uitvoeren en alle fouten tonen
-        if ($usernameBestaat) {
-            $fouten[] = 'Deze gebruikersnaam is al in gebruik.';
-        }
-
-        if ($emailBestaat) {
-            $fouten[] = 'Dit e-mailadres is al in gebruik.';
-        }
-
-        // Alleen registreren als er geen fouten zijn
-        if (empty($fouten)) {
-
-            $hash = password_hash($password, PASSWORD_DEFAULT);
-
-            $stmt = $pdo->prepare(
-                    'INSERT INTO users (username, email, password)
-                 VALUES (?, ?, ?)'
+        try {
+            $checkUsername = $pdo->prepare(
+                    'SELECT id FROM users WHERE username = ? LIMIT 1'
             );
+            $checkUsername->execute([$username]);
 
-            $stmt->execute([$username, $email, $hash]);
+            $checkEmail = $pdo->prepare(
+                    'SELECT id FROM users WHERE email = ? LIMIT 1'
+            );
+            $checkEmail->execute([$email]);
 
-            header('Location: login.php?registered=1');
-            exit;
+            if ($checkUsername->fetch()) {
+                $fouten[] = 'Deze gebruikersnaam is al in gebruik.';
+            }
+
+            if ($checkEmail->fetch()) {
+                $fouten[] = 'Dit e-mailadres is al in gebruik.';
+            }
+
+            if (empty($fouten)) {
+                $hash = password_hash($password, PASSWORD_DEFAULT);
+
+                $stmt = $pdo->prepare(
+                        'INSERT INTO users (username, email, password)
+                     VALUES (?, ?, ?)'
+                );
+
+                $stmt->execute([$username, $email, $hash]);
+
+                header('Location: login.php?registered=1');
+                exit;
+            }
+
+        } catch (PDOException $e) {
+            $fouten[] = 'Registreren is niet gelukt. Controleer je gegevens en probeer opnieuw.';
         }
     }
 }
@@ -82,35 +83,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account aanmaken</title>
+    <title>Account aanmaken | Stop de ontkoking</title>
     <link rel="stylesheet" href="auth.css">
 </head>
-
 <body>
 
 <div class="auth-container">
-    <div class="auth-card">
+    <main class="auth-card">
 
         <div class="auth-icon">✦</div>
 
         <h1>Account aanmaken</h1>
+
         <p class="subtitle">
             Maak een account aan en ontdek onze website.
         </p>
 
         <?php if (!empty($fouten)): ?>
-            <div class="message error">
+            <div class="message error" role="alert">
                 <strong>Er ging iets mis:</strong>
-
                 <ul>
                     <?php foreach ($fouten as $fout): ?>
-                        <li><?= htmlspecialchars($fout) ?></li>
+                        <li><?= htmlspecialchars($fout, ENT_QUOTES, 'UTF-8') ?></li>
                     <?php endforeach; ?>
                 </ul>
             </div>
         <?php endif; ?>
 
-        <form method="POST">
+        <form method="POST" action="register.php">
 
             <label for="username">Gebruikersnaam</label>
             <input
@@ -119,7 +119,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     name="username"
                     placeholder="Kies een gebruikersnaam"
                     maxlength="25"
-                    value="<?= htmlspecialchars($username) ?>"
+                    autocomplete="username"
+                    value="<?= htmlspecialchars($username, ENT_QUOTES, 'UTF-8') ?>"
                     required
             >
 
@@ -130,7 +131,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     name="email"
                     placeholder="naam@voorbeeld.nl"
                     maxlength="25"
-                    value="<?= htmlspecialchars($email) ?>"
+                    autocomplete="email"
+                    value="<?= htmlspecialchars($email, ENT_QUOTES, 'UTF-8') ?>"
                     required
             >
 
@@ -141,12 +143,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     name="password"
                     placeholder="Minimaal 8 tekens"
                     minlength="8"
+                    autocomplete="new-password"
                     required
             >
 
-            <button type="submit">
-                Account aanmaken
-            </button>
+            <button type="submit">Account aanmaken</button>
 
         </form>
 
@@ -155,9 +156,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <a href="login.php">Log hier in</a>
         </p>
 
-    </div>
+    </main>
 </div>
 
 </body>
 </html>
-`

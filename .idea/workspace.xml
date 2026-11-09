@@ -4,17 +4,63 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1bd5e9e0-bfbb-43e5-8f72-fca74b9d7174" name="Changes" comment="dsdsa">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+<<<<<<< HEAD
+    <list default="true" id="1bd5e9e0-bfbb-43e5-8f72-fca74b9d7174" name="Changes" comment="alles">
       <change afterPath="$PROJECT_DIR$/.idea/Team404Project.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/icons/dairyFree.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/icons/dairyFree.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/icons/dessert.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/icons/dessert.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/icons/eggFree.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/icons/eggFree.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/icons/glutenFree.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/icons/glutenFree.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/icons/imageUpload.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/icons/imageUpload.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/icons/meat.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/icons/meat.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/icons/pork.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/icons/pork.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/icons/seafood.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/icons/seafood.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/icons/upload.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/icons/upload.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/icons/vegen.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/icons/vegen.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/icons/vegi.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/icons/vegi.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/Component 9.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/Component 9.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/logo_lightblue.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/logo_lightblue.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth.css" beforeDir="false" afterPath="$PROJECT_DIR$/auth.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/detail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/niks.txt" beforeDir="false" afterPath="$PROJECT_DIR$/css/niks.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/recepten.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/recepten.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/toegvoeg.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/toegvoeg.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/define.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/define.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/empathiz.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/empathiz.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ideate.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ideate.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/prototype.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/prototype.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/test.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/test.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/add.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/navigatiebalk/nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/includes/navigatiebalk/nav.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/navigatiebalk/nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/navigatiebalk/nav.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/navigatiebalk/navigatiebalk.html" beforeDir="false" afterPath="$PROJECT_DIR$/includes/navigatiebalk/navigatiebalk.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/navigatiebalk/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/navigatiebalk/search.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pages-kai/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pages-kai/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pages-kai/meer.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pages-kai/meer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/recepten.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/recepten.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/toevoegpagina.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/toevoegpagina.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/handlers/uitleg.txt" beforeDir="false" afterPath="$PROJECT_DIR$/php/handlers/uitleg.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/includes/uitleg.txt" beforeDir="false" afterPath="$PROJECT_DIR$/php/includes/uitleg.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/views/recepten.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/views/recepten.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/views/recepten.txt" beforeDir="false" afterPath="$PROJECT_DIR$/php/views/recepten.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/views/toevoeg.html" beforeDir="false" afterPath="$PROJECT_DIR$/php/views/toevoeg.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/toevoeg.php" beforeDir="false" afterPath="$PROJECT_DIR$/toevoeg.php" afterDir="false" />
+=======
+>>>>>>> cda7ed6ad60bd6db9265c30668a6bb9ba2807dd2
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,16 +86,80 @@
     &quot;assignee&quot;: &quot;Kai6769&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/DylanTheEye/Team404Project.git&quot;,
-    &quot;accountId&quot;: &quot;3a1b7a67-2731-49bc-9f8e-1123e01f4a1c&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/DylanTheEye/Team404Project.git",
+<<<<<<< HEAD
+    "accountId": "bf99499a-5458-40c2-9c32-e6771e422e47"
   }
-}</component>
+}]]></component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0000009070592781" />
+      <entry key="MS500" value="1.087827751000571" />
+      <entry key="S2" value="2.1063228998990726" />
+      <entry key="S5" value="3.286877603028342" />
+      <entry key="S10" value="4.382794467471301" />
+      <entry key="S30" value="6.741188607679449" />
+      <entry key="S60" value="8.052840723162113" />
+      <entry key="M2" value="8.987397528182782" />
+      <entry key="M5" value="10.229721149752478" />
+      <entry key="M10" value="12.464876639202283" />
+      <entry key="M15" value="14.746482892127725" />
+      <entry key="M30" value="19.498596988944403" />
+      <entry key="H1" value="23.69086651379898" />
+      <entry key="H2" value="26.519344795000563" />
+      <entry key="H4" value="28.16880088466209" />
+      <entry key="D1" value="29.681292390282383" />
+      <entry key="W1" value="29.954127286513053" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="1.0585507497155335E-110" />
+      <entry key="S2" value="3.2075831325311967E-28" />
+      <entry key="S5" value="1.0057062947661226E-11" />
+      <entry key="S10" value="3.1712872698265203E-6" />
+      <entry key="S30" value="0.014694447570069191" />
+      <entry key="S60" value="0.1228003453524945" />
+      <entry key="M2" value="0.3880288813006016" />
+      <entry key="M5" value="0.9313082721303938" />
+      <entry key="M10" value="1.3347357674476075" />
+      <entry key="M15" value="1.5195372642854776" />
+      <entry key="M30" value="1.7387801610689382" />
+      <entry key="H1" value="1.8636079453353311" />
+      <entry key="H2" value="1.9302852771523227" />
+      <entry key="H4" value="1.9647533946336524" />
+      <entry key="D1" value="1.9940706712583023" />
+      <entry key="W1" value="1.999151597679699" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.9592649834243991" />
+      <entry key="MS500" value="1.0786981698036826" />
+      <entry key="S2" value="2.101670434715595" />
+      <entry key="S5" value="3.2830008719295285" />
+      <entry key="S10" value="4.3768937252655435" />
+      <entry key="S30" value="6.74908024930603" />
+      <entry key="S60" value="8.169620566096778" />
+      <entry key="M2" value="9.3702235909902" />
+      <entry key="M5" value="11.1570673528226" />
+      <entry key="M10" value="13.796597798005184" />
+      <entry key="M15" value="16.26352962784013" />
+      <entry key="M30" value="21.235727149320848" />
+      <entry key="H1" value="25.5534934912359" />
+      <entry key="H2" value="28.449090194298854" />
+      <entry key="H4" value="30.13327036989134" />
+      <entry key="D1" value="31.675313646949675" />
+      <entry key="W1" value="31.953271771454574" />
+    </decayedShown>
+  </component>
+=======
+    "accountId": "e6ae3242-3378-483c-8a62-4b9818b4c166"
+  }
+>>>>>>> cda7ed6ad60bd6db9265c30668a6bb9ba2807dd2
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/opt/homebrew/Cellar/php/8.4.10/bin/php" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8,
@@ -63,22 +173,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Merging main&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+<<<<<<< HEAD
+    "RunOnceActivity.MCP Project settings loaded": "true",
+=======
+>>>>>>> cda7ed6ad60bd6db9265c30668a6bb9ba2807dd2
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+<<<<<<< HEAD
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "plsDontbreak",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/Volumes/ONYI_STUFF/Team404Project",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "to.speed.mode.migration.done": "true",
+=======
+    "git-widget-placeholder": "main",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+>>>>>>> cda7ed6ad60bd6db9265c30668a6bb9ba2807dd2
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/includes/navigatiebalk" />
       <recent name="$PROJECT_DIR$/php/views" />
     </key>
   </component>
@@ -102,6 +231,12 @@
       <updated>1793867257166</updated>
       <workItem from="1793867258086" duration="1144000" />
       <workItem from="1793868458862" duration="5676000" />
+<<<<<<< HEAD
+      <workItem from="1794209363959" duration="2465000" />
+      <workItem from="1794211842889" duration="3322000" />
+      <workItem from="1794216792829" duration="757000" />
+=======
+>>>>>>> cda7ed6ad60bd6db9265c30668a6bb9ba2807dd2
     </task>
     <task id="LOCAL-00001" summary="alles">
       <option name="closed" value="true" />
@@ -119,7 +254,15 @@
       <option name="project" value="LOCAL" />
       <updated>1793873362909</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="homepagina inloggen werkt en registeren, ook los van de homepagina">
+      <option name="closed" value="true" />
+      <created>1794213915168</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1794213915168</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,7 +273,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -138,6 +293,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="alles" />
-    <option name="LAST_COMMIT_MESSAGE" value="alles" />
+    <MESSAGE value="homepagina inloggen werkt en registeren, ook los van de homepagina" />
+    <option name="LAST_COMMIT_MESSAGE" value="homepagina inloggen werkt en registeren, ook los van de homepagina" />
   </component>
 </project>
