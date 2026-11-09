@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="1bd5e9e0-bfbb-43e5-8f72-fca74b9d7174" name="Changes" comment="alles">
       <change afterPath="$PROJECT_DIR$/.idea/Team404Project.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
@@ -58,6 +59,8 @@
       <change beforePath="$PROJECT_DIR$/php/views/toevoeg.html" beforeDir="false" afterPath="$PROJECT_DIR$/php/views/toevoeg.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/toevoeg.php" beforeDir="false" afterPath="$PROJECT_DIR$/toevoeg.php" afterDir="false" />
+=======
+>>>>>>> cda7ed6ad60bd6db9265c30668a6bb9ba2807dd2
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +89,7 @@
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/DylanTheEye/Team404Project.git",
+<<<<<<< HEAD
     "accountId": "bf99499a-5458-40c2-9c32-e6771e422e47"
   }
 }]]></component>
@@ -152,6 +156,10 @@
       <entry key="W1" value="31.953271771454574" />
     </decayedShown>
   </component>
+=======
+    "accountId": "e6ae3242-3378-483c-8a62-4b9818b4c166"
+  }
+>>>>>>> cda7ed6ad60bd6db9265c30668a6bb9ba2807dd2
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/opt/homebrew/Cellar/php/8.4.10/bin/php" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8,
@@ -168,12 +176,16 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+<<<<<<< HEAD
     "RunOnceActivity.MCP Project settings loaded": "true",
+=======
+>>>>>>> cda7ed6ad60bd6db9265c30668a6bb9ba2807dd2
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
+<<<<<<< HEAD
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "plsDontbreak",
     "junie.onboarding.icon.badge.shown": "true",
@@ -185,11 +197,17 @@
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.lookFeel",
     "to.speed.mode.migration.done": "true",
+=======
+    "git-widget-placeholder": "main",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+>>>>>>> cda7ed6ad60bd6db9265c30668a6bb9ba2807dd2
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/includes/navigatiebalk" />
       <recent name="$PROJECT_DIR$/php/views" />
     </key>
   </component>
@@ -213,9 +231,12 @@
       <updated>1793867257166</updated>
       <workItem from="1793867258086" duration="1144000" />
       <workItem from="1793868458862" duration="5676000" />
+<<<<<<< HEAD
       <workItem from="1794209363959" duration="2465000" />
       <workItem from="1794211842889" duration="3322000" />
       <workItem from="1794216792829" duration="757000" />
+=======
+>>>>>>> cda7ed6ad60bd6db9265c30668a6bb9ba2807dd2
     </task>
     <task id="LOCAL-00001" summary="alles">
       <option name="closed" value="true" />
@@ -233,7 +254,15 @@
       <option name="project" value="LOCAL" />
       <updated>1793873362909</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="homepagina inloggen werkt en registeren, ook los van de homepagina">
+      <option name="closed" value="true" />
+      <created>1794213915168</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1794213915168</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,6 +293,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="alles" />
-    <option name="LAST_COMMIT_MESSAGE" value="alles" />
+    <MESSAGE value="homepagina inloggen werkt en registeren, ook los van de homepagina" />
+    <option name="LAST_COMMIT_MESSAGE" value="homepagina inloggen werkt en registeren, ook los van de homepagina" />
   </component>
 </project>

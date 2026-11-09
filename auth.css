@@ -1,4 +1,3 @@
-
 /* Algemene instellingen */
 * {
     margin: 0;
@@ -33,7 +32,7 @@ body {
     border: 1px solid #f0ebe5;
 }
 
-/* Icoon bovenaan */
+/* Icoon */
 .auth-icon {
     width: 58px;
     height: 58px;
@@ -64,15 +63,21 @@ body {
 }
 
 /* Formulier */
-label {
+.auth-card form {
+    width: 100%;
+}
+
+.auth-card label {
     display: block;
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 9px;
     margin-top: 20px;
+    color: #38516D;
 }
 
-input {
+.auth-card input {
+    display: block;
     width: 100%;
     padding: 14px 15px;
     border: 1px solid #DCE2E9;
@@ -84,17 +89,18 @@ input {
     transition: 0.2s ease;
 }
 
-input:focus {
+.auth-card input:focus {
     border-color: #38516D;
     box-shadow: 0 0 0 3px rgba(56, 81, 109, 0.10);
 }
 
-input::placeholder {
+.auth-card input::placeholder {
     color: #A3ADB8;
 }
 
 /* Knop */
-button {
+.auth-card button {
+    display: block;
     width: 100%;
     padding: 15px;
     margin-top: 28px;
@@ -108,13 +114,19 @@ button {
     transition: 0.2s ease;
 }
 
-button:hover {
+.auth-card button:hover {
     background-color: #293E57;
     transform: translateY(-2px);
 }
 
-button:active {
+.auth-card button:active {
     transform: translateY(0);
+}
+
+.auth-card button:focus-visible,
+.auth-card a:focus-visible {
+    outline: 3px solid #A3ADB8;
+    outline-offset: 3px;
 }
 
 /* Meldingen */
