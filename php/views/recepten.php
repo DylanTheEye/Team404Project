@@ -27,7 +27,7 @@
                         Meer <span class="site_nav__arrow" aria-hidden="true"></span>
                     </button>
                     <div class="site_nav__drop_content">
-                        <a href="/ontkooking/Team404Project/php/views/recepten.php">Recepten</a>
+                        <a href="./index.php">Recepten</a>
                         <a href="/ontkooking/Team404Project/php/views/toevoeg.html">Toevoegen</a>
                     </div>
                 </div>
